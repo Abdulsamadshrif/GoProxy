@@ -35,7 +35,63 @@ class CombinedTestSuite(unittest.TestCase):
 
     def setUp(self):
         """Setup before each test method"""
-        pass
+        try:
+            print("\nStarting login process...")
+            # Navigate to login page
+            self.driver.get("https://test-admin-ipipgo.cd.xiaoxigroup.net/app-manager/operational/article/categorization")
+            print("Navigated to login page")
+            time.sleep(5)  # Wait for QR code to appear
+            
+            # Click login button
+            print("Looking for login button...")
+            login_button = self.wait.until(EC.element_to_be_clickable(
+                (By.XPATH, '//*[@id="app"]/div/div/div/form/div[2]/div/div/button')
+            ))
+            print("Found login button")
+            self.highlight_element(login_button, "blue", 1)
+            login_button.click()
+            print("Clicked login button")
+            self.log_step("Clicked login button")
+            
+            # Enter username
+            print("Looking for username input...")
+            username_input = self.wait.until(EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div/form/div[1]/div/div/input')
+            ))
+            print("Found username input")
+            self.highlight_element(username_input, "green", 1)
+            username_input.clear()
+            username_input.send_keys("nazarabdulsamadbaba")
+            print("Entered username")
+            self.log_step("Entered username")
+            
+            # Enter password
+            print("Looking for password input...")
+            password_input = self.wait.until(EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div/form/div[2]/div/div/input')
+            ))
+            print("Found password input")
+            self.highlight_element(password_input, "green", 1)
+            password_input.clear()
+            password_input.send_keys("Samad@2014")
+            print("Entered password")
+            self.log_step("Entered password")
+            
+            # Wait for manual captcha entry
+            print("Waiting for manual captcha entry (30 seconds)...")
+            self.log_step("Waiting for manual captcha entry...")
+            time.sleep(30)  # Give time for manual captcha entry
+            
+            # After manual captcha entry, the page will automatically proceed
+            print("Login process completed")
+            self.log_step("Login process completed")
+            
+        except Exception as e:
+            print(f"\nERROR in setUp: {str(e)}")
+            print(f"Error type: {type(e).__name__}")
+            self.take_screenshot("login_error")
+            self.log_step(f"Login failed: {str(e)}", "FAIL")
+            raise
 
     @classmethod
     def tearDownClass(cls):
@@ -65,7 +121,13 @@ class CombinedTestSuite(unittest.TestCase):
 
     def tearDown(self):
         """Cleanup after each test method"""
-        pass
+        try:
+            print("\nClosing browser...")
+            if hasattr(self, 'driver'):
+                self.driver.quit()
+            print("Browser closed successfully")
+        except Exception as e:
+            print(f"Error closing browser: {str(e)}")
 
     def generate_random_name(self, prefix="test", length=8):
         """Generate a random name for testing"""
@@ -108,9 +170,9 @@ class CombinedTestSuite(unittest.TestCase):
         """Test creating a new article category"""
         try:
             self.log_step("Starting Article Category Creation Test")
+            # Navigate to category page
             self.driver.get("https://test-admin-ipipgo.cd.xiaoxigroup.net/app-manager/operational/article/categorization")
-            time.sleep(20)
-            self.driver.get("https://test-admin-ipipgo.cd.xiaoxigroup.net/app-manager/operational/article/categorization")
+            time.sleep(5)  # Wait for page to load
 
             # Generate random test name
             test_name = self.generate_random_name()
