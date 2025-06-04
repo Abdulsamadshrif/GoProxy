@@ -18,6 +18,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 from datetime import datetime
+import random
 
 # Configuration values
 ADMIN_URL = "https://test-admin-goproxy.xiaoxitech.com/customer/customerList"
@@ -43,7 +44,23 @@ class TestGoProxyPurchase(unittest.TestCase):
         self.report_file = os.path.join(self.reports_dir, f"test_goproxy_purchase_{current_time}.txt")
         
         # Initialize browser
-        self.driver = webdriver.Chrome()
+        chrome_options = webdriver.ChromeOptions()
+        
+        # Add options to make browser less detectable as automation
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        chrome_options.add_experimental_option('useAutomationExtension', False)
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-web-security")
+        chrome_options.add_argument("--allow-running-insecure-content")
+        
+        self.driver = webdriver.Chrome(options=chrome_options)
+        
+        # Execute script to hide webdriver property
+        self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+        
         self.wait = WebDriverWait(self.driver, 20)
         
         # Load the page and login
@@ -139,6 +156,12 @@ class TestGoProxyPurchase(unittest.TestCase):
         print("You can close the browser manually when you're done.")
         pass
 
+    def human_delay(self, min_seconds=0.5, max_seconds=2.0):
+        """Add a random delay to mimic human behavior"""
+        delay = random.uniform(min_seconds, max_seconds)
+        print(f"Human-like delay: {delay:.2f} seconds")
+        time.sleep(delay)
+
     def click_element(self, xpath, description):
         """Click an element with retry mechanism"""
         try:
@@ -207,6 +230,90 @@ class TestGoProxyPurchase(unittest.TestCase):
             return True
         except Exception as e:
             print(f"Failed to enter text in {description}: {str(e)}")
+            return False
+
+    def click_element_human_like(self, xpath, description):
+        """Click element with human-like behavior - focus, hover, multiple methods"""
+        print(f"Attempting human-like click for {description}")
+        
+        try:
+            # Wait for element to be present
+            element = self.wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
+            
+            # Check if element is actually visible and enabled
+            if not element.is_displayed():
+                print(f"Element {description} is not visible")
+                return False
+                
+            if not element.is_enabled():
+                print(f"Element {description} is not enabled")
+                return False
+            
+            # Scroll element into view
+            print(f"Scrolling {description} into view...")
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", element)
+            self.human_delay(0.3, 0.8)
+            
+            # Focus the element first (triggers focus events)
+            print(f"Focusing {description}...")
+            self.driver.execute_script("arguments[0].focus();", element)
+            self.human_delay(0.2, 0.5)
+            
+            # Move mouse to element (triggers hover events)
+            print(f"Moving mouse to {description}...")
+            actions = ActionChains(self.driver)
+            actions.move_to_element(element).perform()
+            self.human_delay(0.3, 0.7)
+            
+            # Add visual feedback
+            self.driver.execute_script("""
+                arguments[0].style.border = '3px solid green';
+                arguments[0].style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                arguments[0].style.transition = 'all 0.3s';
+            """, element)
+            time.sleep(0.5)
+            
+            # Method 1: Try regular Selenium click first
+            print(f"Trying regular click for {description}...")
+            try:
+                element.click()
+                print(f"Regular click successful for {description}")
+                return True
+            except Exception as e1:
+                print(f"Regular click failed: {e1}")
+                
+                # Method 2: Try JavaScript click
+                print(f"Trying JavaScript click for {description}...")
+                try:
+                    self.driver.execute_script("arguments[0].click();", element)
+                    print(f"JavaScript click successful for {description}")
+                    return True
+                except Exception as e2:
+                    print(f"JavaScript click failed: {e2}")
+                    
+                    # Method 3: Try ActionChains click
+                    print(f"Trying ActionChains click for {description}...")
+                    try:
+                        actions = ActionChains(self.driver)
+                        actions.click(element).perform()
+                        print(f"ActionChains click successful for {description}")
+                        return True
+                    except Exception as e3:
+                        print(f"ActionChains click failed: {e3}")
+                        
+                        # Method 4: Try sending ENTER key
+                        print(f"Trying ENTER key for {description}...")
+                        try:
+                            element.send_keys(Keys.RETURN)
+                            print(f"ENTER key successful for {description}")
+                            return True
+                        except Exception as e4:
+                            print(f"ENTER key failed: {e4}")
+                            
+            return False
+            
+        except Exception as e:
+            print(f"Failed to find element {description}: {str(e)}")
             return False
 
     def test_purchase_dynamic_packages(self):
@@ -363,13 +470,97 @@ class TestGoProxyPurchase(unittest.TestCase):
 
             # Step 9: Enter duration
             duration_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[5]/div/div[1]/input'
+            
+            # Wait for form to be ready after package selection
+            print("Waiting for duration field to be ready after package selection...")
+            time.sleep(3)
+            
+            # Verify the duration field is available and ready
+            try:
+                duration_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, duration_xpath)))
+                print("Duration field is ready and clickable")
+            except Exception as e:
+                print(f"Duration field not ready: {e}")
+                self.driver.save_screenshot("duration_field_not_ready.png")
+            
             if not self.enter_text(duration_xpath, "7", "duration field"):
                 raise Exception("Failed to enter duration")
+            
+            # Ensure form is fully processed before confirming
+            print("Waiting for form to process duration entry...")
+            time.sleep(2)
 
             # Step 10: Confirm package setup
             final_confirm_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[3]/span/button[2]'
-            if not self.click_element(final_confirm_xpath, "final confirm button"):
-                raise Exception("Failed to click final confirm button")
+            
+            # Robust retry mechanism for intermittent timing issues
+            confirm_success = False
+            max_attempts = 5
+            
+            for attempt in range(max_attempts):
+                print(f"Attempting to click final confirm button (attempt {attempt + 1}/{max_attempts})")
+                
+                try:
+                    # Wait a bit longer each attempt
+                    wait_time = 2 + (attempt * 1)  # 2, 3, 4, 5, 6 seconds
+                    print(f"Waiting {wait_time} seconds for form to be ready...")
+                    time.sleep(wait_time)
+                    
+                    # Try to click the button with human-like behavior
+                    if self.click_element_human_like(final_confirm_xpath, f"final confirm button (attempt {attempt + 1})"):
+                        confirm_success = True
+                        print("Successfully clicked final confirm button with human-like method!")
+                        break
+                    # Fallback to regular click if human-like fails
+                    elif self.click_element(final_confirm_xpath, f"final confirm button fallback (attempt {attempt + 1})"):
+                        confirm_success = True
+                        print("Successfully clicked final confirm button with fallback method!")
+                        break
+                    else:
+                        print(f"Attempt {attempt + 1} failed, trying alternative methods...")
+                        
+                        # Try alternative selectors on failed attempts
+                        if attempt >= 2:  # After 2 failed attempts, try alternatives
+                            print("Trying alternative selectors with human-like clicks...")
+                            alternative_selectors = [
+                                '//button[contains(text(), "确定")]',  # Chinese "OK"
+                                '//button[contains(text(), "确认")]',  # Chinese "Confirm"
+                                '//span[contains(@class, "el-dialog__footer")]//button[last()]',  # Last button in dialog footer
+                                '//div[contains(@class, "el-dialog")]//button[@type="button"][last()]'  # Last button in dialog
+                            ]
+                            
+                            for alt_selector in alternative_selectors:
+                                print(f"Trying alternative selector with human-like click: {alt_selector}")
+                                if self.click_element_human_like(alt_selector, f"final confirm button (alternative)"):
+                                    confirm_success = True
+                                    print("Successfully clicked with alternative selector and human-like method!")
+                                    break
+                            
+                            if confirm_success:
+                                break
+                except Exception as e:
+                    print(f"Exception on attempt {attempt + 1}: {str(e)}")
+                    self.driver.save_screenshot(f"confirm_attempt_{attempt + 1}_error.png")
+            
+            if not confirm_success:
+                # Final attempt - take screenshot and show debug info
+                print("All attempts failed. Taking debug screenshot...")
+                self.driver.save_screenshot("final_confirm_all_attempts_failed.png")
+                
+                # Show available buttons for debugging
+                try:
+                    buttons = self.driver.find_elements(By.XPATH, "//button")
+                    print(f"Found {len(buttons)} buttons on page:")
+                    for i, btn in enumerate(buttons[:5]):  # Show first 5 buttons
+                        try:
+                            if btn.is_displayed():
+                                print(f"  Button {i+1}: text='{btn.text}', class='{btn.get_attribute('class')}'")
+                        except:
+                            continue
+                except Exception as e:
+                    print(f"Could not enumerate buttons: {e}")
+                
+                raise Exception("Failed to click final confirm button after all attempts")
             
             # Step 11: Click confirm payment button in table
             confirm_payment_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[19]/div/div/div/button[1]'
