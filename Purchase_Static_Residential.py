@@ -32,10 +32,8 @@ ENABLE_TOPUP = False  # Set to False to disable top-up functionality
 class TestGoProxyPurchase(unittest.TestCase):
     def setUp(self):
         """Setup before each test"""
-        # Create directories for screenshots and reports
-        self.screenshot_dir = "test_screenshots"
+        # Create directories for reports
         self.reports_dir = "C:/Selenium_Tests/Reports"
-        os.makedirs(self.screenshot_dir, exist_ok=True)
         os.makedirs(self.reports_dir, exist_ok=True)
         
         # Create report file
@@ -85,7 +83,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 time.sleep(2)  # Wait for login form to appear
             except Exception as e:
                 print(f"Failed to click login button: {str(e)}")
-                self.driver.save_screenshot("login_error.png")
                 raise
 
             # Step 2: Enter username
@@ -124,12 +121,9 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print("Successfully navigated to user details page")
             except Exception as e:
                 print(f"Warning: Could not verify page load: {str(e)}")
-                self.driver.save_screenshot("page_load_warning.png")
 
         except Exception as e:
             print(f"Login failed: {str(e)}")
-            # Take screenshot for debugging
-            self.driver.save_screenshot("login_error.png")
             raise
 
     def tearDown(self):
@@ -209,15 +203,6 @@ class TestGoProxyPurchase(unittest.TestCase):
             print(f"Failed to enter text in {description}: {str(e)}")
             return False
 
-    def take_screenshot(self, step_name):
-        """Take a screenshot with timestamp and step name"""
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f"step_{step_name}_{timestamp}.png"
-        filepath = os.path.join(self.screenshot_dir, filename)
-        self.driver.save_screenshot(filepath)
-        print(f"Screenshot saved: {filepath}")
-        return filepath
-
     def test_purchase_static_packages(self):
         """Test the purchase of static packages"""
         try:
@@ -253,7 +238,6 @@ class TestGoProxyPurchase(unittest.TestCase):
             set_meal_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[2]/button[1]'
             try:
                 print("Clicking set meal button...")
-                self.take_screenshot("04a_before_set_meal")
                 
                 # Wait for button to be clickable
                 set_meal_button = WebDriverWait(self.driver, 10).until(
@@ -273,8 +257,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                     except:
                         ActionChains(self.driver).move_to_element(set_meal_button).click().perform()
                 
-                self.take_screenshot("04b_after_set_meal_click")
-                
                 # Wait for the form to appear and be fully loaded
                 print("Waiting for set meal form to appear...")
                 form_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form'
@@ -284,7 +266,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 
                 # Wait for form to be fully interactive
                 time.sleep(3)
-                self.take_screenshot("04c_form_appeared")
                 
                 # Verify form is visible and enabled
                 form = self.driver.find_element(By.XPATH, form_xpath)
@@ -296,14 +277,12 @@ class TestGoProxyPurchase(unittest.TestCase):
                 
             except Exception as e:
                 print(f"Failed in set meal step: {str(e)}")
-                self.take_screenshot("04d_error_state")
                 raise Exception("Failed in set meal step")
 
             # Step 5: Click package type dropdown and select Static package
             package_type_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[1]/div/div/div/input'
             try:
                 print("Clicking package type dropdown...")
-                self.take_screenshot("05a_before_package_type")
                 
                 # Wait for dropdown to be clickable
                 dropdown = WebDriverWait(self.driver, 10).until(
@@ -317,8 +296,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 # Click dropdown
                 dropdown.click()
                 time.sleep(1)
-                
-                self.take_screenshot("05b_after_dropdown_click")
                 
                 # Wait for dropdown options to appear
                 print("Waiting for dropdown options...")
@@ -360,14 +337,11 @@ class TestGoProxyPurchase(unittest.TestCase):
                 if not found:
                     raise Exception("Could not find Static package option")
                 
-                self.take_screenshot("05c_after_static_selection")
-                
                 # Wait for selection to be applied
                 time.sleep(2)
                 
             except Exception as e:
                 print(f"Failed to select package type: {str(e)}")
-                self.take_screenshot("05d_error_state")
                 raise Exception("Failed to select package type")
 
             # Step 6: Click type dropdown and select first option
@@ -394,7 +368,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                     raise Exception("No visible dropdown found")
             except Exception as e:
                 print(f"Failed to select first option in type dropdown: {str(e)}")
-                self.driver.save_screenshot("type_dropdown_first_option_error.png")
                 raise Exception("Failed to select first option in type dropdown")
 
             # Step 7: Click package name dropdown and select the second option
@@ -421,7 +394,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                     raise Exception("No visible dropdown found")
             except Exception as e:
                 print(f"Failed to select second option in package name dropdown: {str(e)}")
-                self.driver.save_screenshot("package_name_dropdown_second_option_error.png")
                 raise Exception("Failed to select second option in package name dropdown")
 
             # Now wait for table row
@@ -448,7 +420,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print("[DEBUG] Entered 3 in new amount input field", flush=True)
             except Exception as e:
                 print(f"[ERROR] Failed to set number box and amount: {str(e)}", flush=True)
-                self.driver.save_screenshot("number_box_or_amount_error.png")
                 raise Exception("Failed to set number box and amount")
 
             # Step 10: Click sure button
@@ -456,7 +427,6 @@ class TestGoProxyPurchase(unittest.TestCase):
             alternative_sure_button_xpath = "//span/button[contains(., '确定') or contains(., 'Sure') or contains(., '确认')]"
             try:
                 print("Clicking sure button...")
-                self.take_screenshot("10a_before_click_sure")
                 
                 # Try main XPath first
                 try:
@@ -468,8 +438,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 # Scroll into view
                 self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", sure_button)
                 time.sleep(0.5)
-                
-                self.take_screenshot("10b_after_scroll")
                 
                 # Try JS click
                 try:
@@ -484,8 +452,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                         print(f"ActionChains click failed: {ac_e}")
                         raise
                 
-                self.take_screenshot("10c_after_click")
-                
                 # Wait for any loading indicators to disappear
                 try:
                     WebDriverWait(self.driver, 10).until_not(
@@ -494,8 +460,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 except:
                     print("No loading mask found or already disappeared")
                 
-                self.take_screenshot("10d_after_loading_mask")
-                
                 # Wait for the dialog to close
                 try:
                     WebDriverWait(self.driver, 10).until_not(
@@ -503,8 +467,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                     )
                 except:
                     print("No dialog found or already closed")
-                
-                self.take_screenshot("10e_after_dialog_close")
                 
                 # Wait for the list to update and verify the item appears
                 print("Waiting for list to update...")
@@ -519,50 +481,34 @@ class TestGoProxyPurchase(unittest.TestCase):
                         lambda driver: len(driver.find_elements(By.XPATH, "//table//tbody/tr")) > 0
                     )
                     
-                    # Take screenshot of the list
-                    self.take_screenshot("10f_list_updated")
-                    
                     # Verify the item is in the list
                     rows = self.driver.find_elements(By.XPATH, "//table//tbody/tr")
                     if len(rows) > 0:
                         print(f"Found {len(rows)} items in the list")
                     else:
                         print("Warning: No items found in the list")
-                        self.take_screenshot("10g_no_items_in_list")
                         
                 except Exception as e:
                     print(f"Failed to verify list update: {str(e)}")
-                    self.take_screenshot("10h_list_verification_failed")
                 
                 # Additional wait time after clicking
                 print("Waiting for page to stabilize after clicking sure button...")
                 time.sleep(5)
                 
-                self.take_screenshot("10i_final_state")
-                
             except Exception as e:
                 print(f"Failed to click sure button: {str(e)}")
-                self.take_screenshot("10j_error_state")
                 raise Exception("Failed to click sure button")
 
             # Step 11: Click payment button
             payment_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[19]/div/div/div/button[1]'
             try:
                 print("Clicking payment button...")
-                # Take screenshot before clicking payment button
-                self.take_screenshot("11a_before_click_payment")
-                
                 payment_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, payment_button_xpath)))
                 self.driver.execute_script("arguments[0].click();", payment_button)
                 print("Clicked payment button")
-                
-                # Take screenshot after clicking payment button
-                self.take_screenshot("11b_after_click_payment")
-                
                 time.sleep(2)
             except Exception as e:
                 print(f"Failed to click payment button: {str(e)}")
-                self.take_screenshot("11c_error_state")
                 raise Exception("Failed to click payment button")
 
             # Step 12: Handle popup and click sure button
@@ -575,13 +521,11 @@ class TestGoProxyPurchase(unittest.TestCase):
                 time.sleep(2)
             except Exception as e:
                 print(f"Failed to click popup sure button: {str(e)}")
-                self.driver.save_screenshot("popup_sure_button_error.png")
                 raise Exception("Failed to click popup sure button")
 
             # Step 13: Click static package tab
             try:
                 print("Clicking static package tab...")
-                self.take_screenshot("13a_before_static_tab")
                 
                 # Wait for page to be ready after previous operations
                 time.sleep(3)
@@ -614,8 +558,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                             arguments[0].style.border = '3px solid red';
                             arguments[0].style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
                         """, tab_element)
-                        
-                        self.take_screenshot(f"13b_tab_found_{xpath.split('/')[-1]}")
                         
                         # Try multiple click methods
                         try:
@@ -655,8 +597,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 if not tab_clicked:
                     raise Exception("Failed to click static package tab with all XPaths")
                 
-                self.take_screenshot("13c_after_tab_click")
-                
                 # Wait for tab content to load
                 print("Waiting for static package tab content to load...")
                 WebDriverWait(self.driver, 10).until(
@@ -664,17 +604,14 @@ class TestGoProxyPurchase(unittest.TestCase):
                 )
                 
                 time.sleep(3)  # Additional wait for content to stabilize
-                self.take_screenshot("13d_tab_content_loaded")
                 
             except Exception as e:
                 print(f"Failed to click static package tab: {str(e)}")
-                self.take_screenshot("13e_tab_error")
                 raise Exception("Failed to click static package tab")
 
             # Step 14: Click Closure button
             try:
                 print("Clicking Closure button...")
-                self.take_screenshot("14a_before_closure")
                 
                 # Multiple XPaths for the closure button
                 closure_button_xpaths = [
@@ -706,8 +643,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                             arguments[0].style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                         """, closure_button)
                         
-                        self.take_screenshot(f"14b_closure_found_{xpath.split('/')[-1]}")
-                        
                         # Try multiple click methods
                         try:
                             closure_button.click()
@@ -730,19 +665,14 @@ class TestGoProxyPurchase(unittest.TestCase):
                 if not closure_clicked:
                     raise Exception("Failed to click Closure button with all XPaths")
                 
-                self.take_screenshot("14c_after_closure_click")
-                
                 # Wait for any confirmation dialog or page update
                 time.sleep(3)
-                self.take_screenshot("14d_after_closure_wait")
                 
             except Exception as e:
                 print(f"Failed to click Closure button: {str(e)}")
-                self.take_screenshot("14e_closure_error")
                 raise Exception("Failed to click Closure button")
 
             print("Test completed successfully!")
-            self.take_screenshot("15_final_success")
 
             # Refresh the page and keep browser open
             self.driver.refresh()
@@ -751,7 +681,6 @@ class TestGoProxyPurchase(unittest.TestCase):
 
         except Exception as e:
             print(f"Test failed: {str(e)}")
-            self.take_screenshot("final_error_state")
             raise
 
 if __name__ == '__main__':

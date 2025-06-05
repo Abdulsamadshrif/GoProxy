@@ -33,10 +33,8 @@ ENABLE_TOPUP = False  # Set to False to disable top-up functionality
 class TestGoProxyPurchase(unittest.TestCase):
     def setUp(self):
         """Setup before each test"""
-        # Create directories for screenshots and reports
-        self.screenshot_dir = "test_screenshots"
+        # Create directories for reports
         self.reports_dir = "C:/Selenium_Tests/Reports"
-        os.makedirs(self.screenshot_dir, exist_ok=True)
         os.makedirs(self.reports_dir, exist_ok=True)
         
         # Create report file
@@ -102,7 +100,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 time.sleep(2)  # Wait for login form to appear
             except Exception as e:
                 print(f"Failed to click login button: {str(e)}")
-                self.driver.save_screenshot("login_error.png")
                 raise
 
             # Step 2: Enter username
@@ -141,12 +138,10 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print("Successfully navigated to user details page")
             except Exception as e:
                 print(f"Warning: Could not verify page load: {str(e)}")
-                self.driver.save_screenshot("page_load_warning.png")
 
         except Exception as e:
             print(f"Login failed: {str(e)}")
             # Take screenshot for debugging
-            self.driver.save_screenshot("login_error.png")
             raise
 
     def tearDown(self):
@@ -378,12 +373,10 @@ class TestGoProxyPurchase(unittest.TestCase):
                     no_auto_element.click()
                     print("Clicked 非自动订阅 (Non-Auto Subscription) option")
                 else:
-                    self.driver.save_screenshot("no_auto_not_found.png")
                     raise Exception("Failed to find 非自动订阅 (Non-Auto Subscription) option")
                 time.sleep(1)  # Wait for selection to take effect
             except Exception as e:
                 print(f"Error selecting 非自动订阅: {str(e)}")
-                self.driver.save_screenshot("no_auto_error.png")
                 raise Exception("Failed to select 非自动订阅 (Non-Auto Subscription)")
                             
             # Step 7: Select package size
@@ -461,7 +454,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                     except Exception as e2:
                         print(f"Alternative method also failed: {e2}")
                         # Take screenshot to debug
-                        self.driver.save_screenshot("1gb_option_error.png")
                         raise Exception("Failed to select 1GB option")
                         
             except Exception as e:
@@ -481,7 +473,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print("Duration field is ready and clickable")
             except Exception as e:
                 print(f"Duration field not ready: {e}")
-                self.driver.save_screenshot("duration_field_not_ready.png")
             
             if not self.enter_text(duration_xpath, "7", "duration field"):
                 raise Exception("Failed to enter duration")
@@ -540,12 +531,10 @@ class TestGoProxyPurchase(unittest.TestCase):
                                 break
                 except Exception as e:
                     print(f"Exception on attempt {attempt + 1}: {str(e)}")
-                    self.driver.save_screenshot(f"confirm_attempt_{attempt + 1}_error.png")
             
             if not confirm_success:
                 # Final attempt - take screenshot and show debug info
-                print("All attempts failed. Taking debug screenshot...")
-                self.driver.save_screenshot("final_confirm_all_attempts_failed.png")
+                print("All attempts failed.")
                 
                 # Show available buttons for debugging
                 try:
@@ -591,7 +580,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 
             except Exception as e:
                 print(f"Failed to click confirm payment button: {e}")
-                self.driver.save_screenshot("confirm_payment_error.png")
                 raise Exception("Failed to click confirm payment button")
             
             # Step 12: Handle popup and click sure button
@@ -634,7 +622,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 
             except Exception as e:
                 print(f"Failed to click sure button: {e}")
-                self.driver.save_screenshot("sure_button_error.png")
                 raise Exception("Failed to click sure button in popup")
                         #//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[19]/div/div/div/button[1]
             print("Test completed successfully!")
