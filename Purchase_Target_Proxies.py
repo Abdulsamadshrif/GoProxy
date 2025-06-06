@@ -328,19 +328,70 @@ class TestGoProxyPurchase(unittest.TestCase):
                 raise Exception("Failed to select first option")
 
             # Step 9: Click third dropdown
-            third_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[3]/div/div/div/div[1]/div/input'
+            third_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[3]/div/div/div/input'
             if not self.click_element(third_dropdown_xpath, "third dropdown"):
                 raise Exception("Failed to click third dropdown")
 
+            # Wait longer for dropdown to fully open and render
+            print("Waiting for third dropdown options to appear...")
+            time.sleep(2)
+
+            # Step 10: Select first option from third dropdown - Enhanced selection
+            try:
+                # Find all visible dropdowns
+                dropdowns = self.driver.find_elements(By.XPATH, "//ul[contains(@class, 'el-select-dropdown__list')]")
+                found = False
+                
+                for dropdown in dropdowns:
+                    if dropdown.is_displayed():
+                        # Try to find the first option in this dropdown
+                        try:
+                            options = dropdown.find_elements(By.TAG_NAME, "li")
+                            if options:
+                                # Scroll first option into view
+                                self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", options[0])
+                                time.sleep(0.5)
+                                
+                                # Try multiple click methods
+                                try:
+                                    options[0].click()
+                                except:
+                                    try:
+                                        self.driver.execute_script("arguments[0].click();", options[0])
+                                    except:
+                                        ActionChains(self.driver).move_to_element(options[0]).click().perform()
+                                
+                                print("Successfully selected first option from third dropdown")
+                                found = True
+                                break
+                        except Exception as e:
+                            print(f"Failed to interact with options in dropdown: {str(e)}")
+                            continue
+                
+                if not found:
+                    raise Exception("Could not find or click any options in the third dropdown")
+                
+                # Wait for selection to be applied
+                time.sleep(1)
+                
+            except Exception as e:
+                print(f"Failed to select option from third dropdown: {str(e)}")
+                raise Exception("Failed to select option from third dropdown")
+
+            # Step 11: Click fourth dropdown
+            fourth_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[4]/div/div/div[1]/div[1]/div/input'
+            if not self.click_element(fourth_dropdown_xpath, "fourth dropdown"):
+                raise Exception("Failed to click fourth dropdown")
+
             time.sleep(1)
 
-            # Step 10: Select second option from third dropdown
-            third_option_xpath = '/html/body/div[5]/div[1]/div[1]/ul/li[2]/span'
-            if not self.click_element(third_option_xpath, "second option from third dropdown"):
-                raise Exception("Failed to select second option from third dropdown")
+            # Step 12: Select second option from fourth dropdown
+            fourth_option_xpath = '/html/body/div[6]/div[1]/div[1]/ul/li[2]/span'
+            if not self.click_element(fourth_option_xpath, "second option from fourth dropdown"):
+                raise Exception("Failed to select second option from fourth dropdown")
 
-            # Step 11: Click number box and enter 3
-            number_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[3]/div/div/div[1]/div[2]/div/input'
+            # Step 13: Click number box and enter 3
+            number_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[4]/div/div/div[1]/div[2]/div/input'
             try:
                 number_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, number_box_xpath)))
                 number_element.clear()
@@ -349,13 +400,13 @@ class TestGoProxyPurchase(unittest.TestCase):
             except Exception as e:
                 raise Exception("Failed to enter 3 in number box")
 
-            # Step 12: Click text box and enter 54
-            text_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[5]/div/div/input'
-            if not self.enter_text(text_box_xpath, "54", "text box"):
-                raise Exception("Failed to enter 54 in text box")
+            # Step 14: Click text box and enter 9
+            text_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[6]/div/div/input'
+            if not self.enter_text(text_box_xpath, "9", "text box"):
+                raise Exception("Failed to enter 9 in text box")
      
          
-            # Step 13: Click confirm button
+            # Step 15: Click confirm button
             confirm_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[3]/span/button[2]'
             if not self.click_element_optimized(confirm_button_xpath, "confirm button"):
                 if not self.click_element(confirm_button_xpath, "confirm button fallback"):
@@ -364,7 +415,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             # Wait for popup to close
             time.sleep(2)
 
-            # Step 14: Click payment confirm button
+            # Step 16: Click payment confirm button
             payment_confirm_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[19]/div/div/div/button[1]'
             try:
                 # Wait for table and find button
@@ -381,7 +432,7 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print(f"Failed to click payment confirm button: {e}")
                 raise Exception("Failed to click payment confirm button")
 
-            # Step 15: Click sure button in popup
+            # Step 17: Click sure button in popup
             sure_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[3]/div/div/div[3]/span/button[2]'
             try:
                 sure_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, sure_button_xpath)))
@@ -393,15 +444,15 @@ class TestGoProxyPurchase(unittest.TestCase):
 
             time.sleep(1)
 
-            # Step 16: Click datacenter tab
-            datacenter_tab_xpath = '//*[@id="tab-dataPackage"]'
+            # Step 18: Click 定制套餐 tab
+            datacenter_tab_xpath = '//*[@id="tab-customPackage"]'
             if not self.click_element(datacenter_tab_xpath, "datacenter tab"):
                 raise Exception("Failed to click datacenter tab")
 
             time.sleep(1)
 
-            # Step 17: Click cluster button
-            cluster_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[8]/div/div/div/div/button[4]'
+            # Step 19: Click cluster button
+            cluster_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[9]/div/div/div/div/button[4]'
             try:
                 # Wait for table and find button
                 self.wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table')))
