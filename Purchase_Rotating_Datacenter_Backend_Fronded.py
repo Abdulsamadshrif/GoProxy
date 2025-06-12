@@ -515,7 +515,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             
             print("Setting authentication cookies...")
             
-            admin_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHQiOiJ7XCJhY3RpdmVcIjp0cnVlLFwibG9naW5fZmxhZ1wiOlwiYWU0ZmU1YThhMWMxMGE1YTVhYTU4NjkzMjU1ZTNlNWJcIn0iLCJ1c2VyX25hbWUiOiJ4aWFveGlxYUBnbWFpbC5jb20iLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzQ5Njk0NDYzLCJ1c2VySWQiOiIxOTA1NDQyNDkwMzcxMTQ1NzI4IiwianRpIjoiMjA0YjY1Y2YtOGVhZS00YzA2LTg2YzgtOWE0MTZiOTJmY2E3IiwiY2xpZW50X2lkIjoiZ29fcHJveHkifQ.y-GAkHh3s66BwGFjohop1h6xkl2LPkLBOpeNZzNISl3Ted0R89rhM45KdUlXRTQvrMadTCVkq9B22MvA7dUf6KBowIp874uAEu72roN1h9cqOkBGMo-z5yOAOnlzZ15i4N4pqHxtjR0Bg01O-wCl_H3AOjMUYrS6CLpYTgQwhGWcYwroeaq66juBDDymkVzgOGXUdO7erFPeUuHc8Q4JIcw9C74DVmIsEE43m18-Q3Dp_8PBZyFiGqbKf_m89c5o3M5L2tYdoLzdtGzlftXG8ibfmk0vt9K2BCs4D2Qqy4iDz8BKspNZgpeaaFlCs6ZbnnLtylZmZHeXFaJpUc0MzQ"
+            admin_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHQiOiJ7XCJhY3RpdmVcIjp0cnVlLFwibG9naW5fZmxhZ1wiOlwiYWU0ZmU1YThhMWMxMGE1YTVhYTU4NjkzMjU1ZTNlNWJcIn0iLCJ1c2VyX25hbWUiOiJ4aWFveGlxYUBnbWFpbC5jb20iLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzUwOTk2MzA2LCJ1c2VySWQiOiIxOTA1NDQyNDkwMzcxMTQ1NzI4IiwianRpIjoiYTVkNDMyNWEtOTdkYS00ODAyLTkyOTAtYWY1MTlhMDY2Njg5IiwiY2xpZW50X2lkIjoiZ29fcHJveHkifQ.XYroVcBlFq654Qs0MtmB4LcPC0mDI_VxMv22UQMcI_h1EfaZT9wUzDydjsopOq2y2Q6c7sq2E_XidDHPA3O0P1VkN8TxbuFiEXTnJz10oA1YGdn__9HnjNSrDdxzI-ztgwL3O0vvdfl-q9lCO3Vut0maAWTxK0IPKgaiXBMsGEUuMx2USSWUZT2mukvVbukTLViAaAUiJeKUIQ8U-k8ThbGG-dNkaS5VI4Yh7wacM3i6wc-igF_q80KqThEjObeSomT91JKZ9mWp8O9zSu188xU3-j81aSOUS7RVrGTpFvjS5cZt6ceM9jrHUbua4DR7oBAKE_XRQZWx-jqxQPRDaA"
             
             cookies = [
                 {
@@ -569,22 +569,159 @@ class TestGoProxyPurchase(unittest.TestCase):
             transaction_tab = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div/div[1]/div[3]')))
             self.highlight_element(transaction_tab, 'blue')
             transaction_tab.click()
-            time.sleep(2)
+            time.sleep(5)
             
             print("Clicking payment button...")
             payment_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div/div[4]/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[9]/div/div/button[1]')))
             self.highlight_element(payment_button, 'green')
             payment_button.click()
-            time.sleep(3)
+            time.sleep(5)
             
             print("Clicking payment again button...")
             payment_again_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div[2]/div[2]/div[1]/button')))
             self.highlight_element(payment_again_button, 'green')
             payment_again_button.click()
-            time.sleep(3)
+            time.sleep(5)
+            
+            # Handle PayPal payment flow
+            try:
+                # Switch to the new PayPal window
+                print("Switching to PayPal window...")
+                windows = self.driver.window_handles
+                self.driver.switch_to.window(windows[-1])
+                
+                # Verify we're on the PayPal sandbox page
+                self.wait.until(
+                    lambda driver: "https://www.sandbox.paypal.com/checkoutnow?" in driver.current_url
+                )
+                print(f"Successfully redirected to PayPal sandbox: {self.driver.current_url}")
+                
+                # Enter email
+                print("Entering PayPal email...")
+                email_field = self.wait.until(
+                    EC.presence_of_element_located((By.XPATH, "//*[@id='email']"))
+                )
+                email_field.clear()
+                email_field.send_keys("xiaoxiqa@gmail.com")
+                
+                # Click Next button
+                print("Clicking Next button...")
+                next_button = self.wait.until(
+                    EC.element_to_be_clickable((By.XPATH, "//*[@id='btnNext']"))
+                )
+                next_button.click()
+                
+                # Wait for password field
+                print("Waiting for password field...")
+                time.sleep(3)
+                
+                # Try to find password field in main content and iframes
+                password_field = None
+                try:
+                    # First try in main content
+                    password_field = self.wait.until(
+                        EC.presence_of_element_located((By.XPATH, "//*[@id='password']"))
+                    )
+                except:
+                    # If not found, try in iframes
+                    print("Password field not found in main content, checking iframes...")
+                    iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
+                    for iframe in iframes:
+                        try:
+                            self.driver.switch_to.frame(iframe)
+                            password_field = self.wait.until(
+                                EC.presence_of_element_located((By.XPATH, "//*[@id='password']"))
+                            )
+                            break
+                        except:
+                            self.driver.switch_to.default_content()
+                            continue
+                
+                if password_field:
+                    print("Found password field, entering password...")
+                    self.wait.until(EC.element_to_be_clickable(password_field))
+                    password_field.clear()
+                    password_field.send_keys("Xiaoxi123@")
+                    
+                    # Click Login button
+                    print("Clicking Login button...")
+                    login_button = self.wait.until(
+                        EC.element_to_be_clickable((By.XPATH, "//*[@id='btnLogin']"))
+                    )
+                    login_button.click()
+                    
+                    # Switch back to default content if we were in an iframe
+                    self.driver.switch_to.default_content()
+                    
+                    # Wait for payment review page and click Continue
+                    print("Waiting for payment review page...")
+                    self.wait.until(
+                        lambda driver: "https://www.sandbox.paypal.com/webapps/hermes?" in driver.current_url
+                    )
+                    time.sleep(3)
+                    
+                    print("Clicking Continue button...")
+                    # Try multiple selectors for the Continue button
+                    continue_button = None
+                    try:
+                        # First try the new XPath
+                        continue_button = self.wait.until(
+                            EC.element_to_be_clickable((By.XPATH, "//*[@id='hermione-container']/div[1]/main/div[3]/div[2]/button"))
+                        )
+                    except:
+                        try:
+                            # Fallback to the old XPath
+                            continue_button = self.wait.until(
+                                EC.element_to_be_clickable((By.XPATH, "//*[@id='button']/button"))
+                            )
+                        except:
+                            # Try finding by text content
+                            continue_button = self.wait.until(
+                                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Continue')]"))
+                            )
+                    
+                    if continue_button:
+                        # Scroll the button into view
+                        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", continue_button)
+                        time.sleep(1)
+                        # Try JavaScript click first
+                        try:
+                            self.driver.execute_script("arguments[0].click();", continue_button)
+                        except:
+                            # Fallback to regular click
+                            continue_button.click()
+                    else:
+                        raise Exception("Could not find Continue button with any selector")
+                    
+                    # Wait for success page
+                    print("Waiting for payment success page...")
+                    self.wait.until(
+                        lambda driver: "https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal" in driver.current_url
+                    )
+                    
+                    # Verify success element is present
+                    print("Verifying success element...")
+                    success_element = self.wait.until(
+                        EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/section/section/main/div/div/div[1]"))
+                    )
+                    print("Success element found!")
+                    
+                    # Switch back to main window
+                    self.driver.switch_to.window(windows[0])
+                    print("Successfully completed PayPal payment!")
+                    
+                else:
+                    raise Exception("Could not find password field in main content or iframes")
+                
+            except Exception as e:
+                print(f"Failed to complete PayPal payment flow: {str(e)}")
+                # Take screenshot of error
+                screenshot_path = f"paypal_payment_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+                self.driver.save_screenshot(screenshot_path)
+                print(f"Screenshot saved to {screenshot_path}")
+                raise
             
             print("\nProcess completed successfully!")
-            print("PayPal checkout page is loaded.")
             print("Browser will remain open. Press Enter in the terminal to close it when you're done.")
             input("Press Enter to exit and close the browser...")
             
