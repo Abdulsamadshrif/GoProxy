@@ -297,10 +297,6 @@ class TestGoProxyPurchase(unittest.TestCase):
                 
             except Exception as e:
                 print(f"Failed to confirm purchase: {str(e)}")
-                # Take a screenshot for debugging
-                screenshot_path = f"confirmation_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-                self.driver.save_screenshot(screenshot_path)
-                print(f"Screenshot saved to {screenshot_path}")
                 raise
 
             print("Test completed successfully!")
@@ -535,11 +531,7 @@ class TestGoProxyPurchase(unittest.TestCase):
                     raise Exception("Could not find password field in main content or iframes")
                 
             except Exception as e:
-                print(f"Failed to complete PayPal payment flow: {str(e)}")
-                # Take screenshot of error
-                screenshot_path = f"paypal_payment_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-                self.driver.save_screenshot(screenshot_path)
-                print(f"Screenshot saved to {screenshot_path}")
+                print(f"PayPal payment failed: {str(e)}")
                 raise
             
             print("\nProcess completed successfully!")
@@ -547,11 +539,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             input("Press Enter to exit and close the browser...")
             
         except Exception as e:
-            print(f"Error in additional steps: {str(e)}")
-            # Take a screenshot for debugging
-            screenshot_path = f"additional_steps_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-            self.driver.save_screenshot(screenshot_path)
-            print(f"Screenshot saved to {screenshot_path}")
+            print(f"Additional steps failed: {str(e)}")
             raise
 
     def tearDown(self):
