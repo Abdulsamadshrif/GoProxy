@@ -370,9 +370,8 @@ def close_package(report_dir):
         take_screenshot(driver, "final_error", report_dir)
         raise
 
-"""
 def test_wallet_payment_with_balance(driver, report_dir):
-    Test case for wallet payment with sufficient balance
+    """Test case for wallet payment with sufficient balance"""
     try:
         print("\n=== Starting wallet payment with balance test ===")
         # Add authentication cookies
@@ -499,7 +498,7 @@ def test_wallet_payment_with_balance(driver, report_dir):
         raise
 
 def test_wallet_payment_without_balance(driver, report_dir):
-    Test case for wallet payment with zero balance
+    """Test case for wallet payment with zero balance"""
     try:
         print("\n=== Starting wallet payment without balance test ===")
         # Add authentication cookies
@@ -619,7 +618,7 @@ def test_wallet_payment_without_balance(driver, report_dir):
         raise
 
 def test_google_pay_payment(driver, report_dir):
-    Test case for Google Pay payment
+    """Test case for Google Pay payment"""
     try:
         print("\n=== Starting Google Pay payment test ===")
         # Add authentication cookies
@@ -750,7 +749,7 @@ def test_google_pay_payment(driver, report_dir):
         raise
 
 def test_paypal_payment(driver, report_dir):
-    Test case for PayPal payment
+    """Test case for PayPal payment"""
     try:
         print("\n=== Starting PayPal payment test ===")
         # Add authentication cookies
@@ -990,7 +989,7 @@ def test_paypal_payment(driver, report_dir):
         print(f"\n=== Test failed with error: {str(e)} ===")
         take_screenshot(driver, "final_error", report_dir)
         raise
-"""
+
 # ===== Main Test Function =====
 def main():
     """Main function to run the complete test flow"""
