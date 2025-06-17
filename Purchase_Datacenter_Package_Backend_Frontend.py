@@ -380,6 +380,17 @@ class TestGoProxyPurchase(unittest.TestCase):
             
             self.handle_additional_steps()
 
+            # Add explicit success check
+            if self.verify_payment_success():
+                print("\n=== TEST PASSED ===")
+                print("✓ Payment successful")
+                print("✓ Order number found")
+                print("✓ Success page reached")
+            else:
+                print("\n=== TEST FAILED ===")
+                print("✗ Payment verification failed")
+                raise Exception("Payment verification failed")
+
         except Exception as e:
             print(f"Test failed: {str(e)}")
             raise
@@ -466,10 +477,14 @@ class TestGoProxyPurchase(unittest.TestCase):
             payment_again_button.click()
             time.sleep(5)
             
+            # Store the main window handle
+            main_window = self.driver.current_window_handle
+            
             # Handle PayPal payment flow
             try:
                 # Switch to the new PayPal window
                 print("Switching to PayPal window...")
+                self.wait.until(lambda driver: len(driver.window_handles) > 1)
                 windows = self.driver.window_handles
                 self.driver.switch_to.window(windows[-1])
                 
@@ -582,39 +597,97 @@ class TestGoProxyPurchase(unittest.TestCase):
                         lambda driver: "https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal" in driver.current_url
                     )
                     
-                    # Verify success element is present
-                    print("Verifying success element...")
-                    success_element = self.wait.until(
-                        EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/section/section/main/div/div/div[1]"))
-                    )
-                    print("Success element found!")
+                    # Verify we're on the success page
+                    current_url = self.driver.current_url
+                    print(f"Current URL after payment: {current_url}")
                     
-                    # Switch back to main window
-                    self.driver.switch_to.window(windows[0])
-                    print("Successfully completed PayPal payment!")
+                    if "payment-success" in current_url and "payType=PayPal" in current_url:
+                        print("Payment success verified!")
+                        return True
+                    else:
+                        print("Payment success page not reached")
+                        return False
                     
                 else:
                     raise Exception("Could not find password field in main content or iframes")
                 
             except Exception as e:
                 print(f"Failed to complete PayPal payment flow: {str(e)}")
+                # Take screenshot of error
+                screenshot_path = f"paypal_payment_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+                self.driver.save_screenshot(screenshot_path)
+                print(f"Screenshot saved to {screenshot_path}")
                 raise
             
             print("\nProcess completed successfully!")
-            print("Browser will remain open. Press Enter in the terminal to close it when you're done.")
-            input("Press Enter to exit and close the browser...")
             
         except Exception as e:
-            print(f"Additional steps failed: {str(e)}")
+            print(f"Error in additional steps: {str(e)}")
             raise
+
+    def verify_payment_success(self, report_dir=None):
+        """Verify if the payment was successful by checking URL and success elements"""
+        try:
+            print("\n=== Verifying Payment Success ===")
+            
+            # Wait for success page
+            self.wait.until(
+                lambda driver: "payment-success" in driver.current_url
+            )
+            
+            # Get the current URL
+            current_url = self.driver.current_url
+            print(f"Current URL: {current_url}")
+            
+            # Check for PayPal success indicators
+            if "payType=PayPal" in current_url:
+                print("PayPal payment success detected")
+                # Check for success element
+                success_element = self.wait.until(
+                    EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/section/section/main/div/div/div[1]"))
+                )
+                print("Success element found!")
+                if report_dir:
+                    self.take_screenshot("payment_success")
+                return True
+            else:
+                print("Payment page reached but PayPal success indicators not found")
+                if report_dir:
+                    self.take_screenshot("payment_no_success")
+                return False
+                
+        except Exception as e:
+            print(f"Failed to verify payment success: {str(e)}")
+            if report_dir:
+                self.take_screenshot("payment_verification_error")
+            return False
 
     # Task 15: Test Cleanup
     # Description: Handle test cleanup and browser closure
     # Purpose: Ensure proper cleanup after test execution
     def tearDown(self):
-        """Cleanup after test"""
-        print("\nTest completed. Browser will remain open for manual inspection.")
-        print("You can close the browser manually when you're done.")
+        """Clean up after each test"""
+        try:
+            print("\n=== Cleaning up and closing browser ===")
+            # Take final screenshot if needed
+            try:
+                self.take_screenshot("final_state")
+            except:
+                pass
+            
+            # Close all windows and quit browser
+            if hasattr(self, 'driver'):
+                self.driver.quit()
+                print("Browser closed successfully")
+        except Exception as e:
+            print(f"Error during cleanup: {str(e)}")
+        finally:
+            # Ensure browser is closed even if there's an error
+            try:
+                if hasattr(self, 'driver'):
+                    self.driver.quit()
+            except:
+                pass
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

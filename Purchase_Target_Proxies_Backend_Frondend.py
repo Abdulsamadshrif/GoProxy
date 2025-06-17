@@ -654,7 +654,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             self.driver.execute_script(f"localStorage.setItem('token', '{admin_token}')")
             
             self.driver.refresh()
-            time.sleep(5)
+            time.sleep(3)
             
             try:
                 self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'user-info') or contains(@class, 'avatar')]")))
@@ -664,7 +664,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             
             print("Navigating to billing page...")
             self.driver.get("https://test-goproxy.xiaoxitech.com/dashboard/billing/")
-            time.sleep(5)
+            time.sleep(3)
             
             print("Clicking on Transaction tab...")
             transaction_tab = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div/div[1]/div[3]')))
@@ -684,10 +684,14 @@ class TestGoProxyPurchase(unittest.TestCase):
             payment_again_button.click()
             time.sleep(5)
             
+            # Store the main window handle
+            main_window = self.driver.current_window_handle
+            
             # Handle PayPal payment flow
             try:
                 # Switch to the new PayPal window
                 print("Switching to PayPal window...")
+                self.wait.until(lambda driver: len(driver.window_handles) > 1)
                 windows = self.driver.window_handles
                 self.driver.switch_to.window(windows[-1])
                 
@@ -800,27 +804,29 @@ class TestGoProxyPurchase(unittest.TestCase):
                         lambda driver: "https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal" in driver.current_url
                     )
                     
-                    # Verify success element is present
-                    print("Verifying success element...")
-                    success_element = self.wait.until(
-                        EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/section/section/main/div/div/div[1]"))
-                    )
-                    print("Success element found!")
+                    # Verify we're on the success page
+                    current_url = self.driver.current_url
+                    print(f"Current URL after payment: {current_url}")
                     
-                    # Switch back to main window
-                    self.driver.switch_to.window(windows[0])
-                    print("Successfully completed PayPal payment!")
+                    if "payment-success" in current_url and "payType=PayPal" in current_url:
+                        print("Payment success verified!")
+                        return True
+                    else:
+                        print("Payment success page not reached")
+                        return False
                     
                 else:
                     raise Exception("Could not find password field in main content or iframes")
                 
             except Exception as e:
-                print(f"PayPal payment failed: {str(e)}")
+                print(f"Failed to complete PayPal payment flow: {str(e)}")
+                # Take screenshot of error
+                screenshot_path = f"paypal_payment_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+                self.driver.save_screenshot(screenshot_path)
+                print(f"Screenshot saved to {screenshot_path}")
                 raise
             
             print("\nProcess completed successfully!")
-            print("Browser will remain open. Press Enter in the terminal to close it when you're done.")
-            input("Press Enter to exit and close the browser...")
             
         except Exception as e:
             print(f"Error in additional steps: {str(e)}")

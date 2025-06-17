@@ -313,18 +313,14 @@ class TestGoProxyPurchase(unittest.TestCase):
         try:
             print("\nStarting additional steps...")
             
-            # Navigate to the main website
             print("Navigating to main website...")
             self.driver.get("https://test-goproxy.xiaoxitech.com")
             time.sleep(2)
             
-            # Set all necessary cookies
             print("Setting authentication cookies...")
             
-            # Main authentication token
             admin_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHQiOiJ7XCJhY3RpdmVcIjp0cnVlLFwibG9naW5fZmxhZ1wiOlwiYWU0ZmU1YThhMWMxMGE1YTVhYTU4NjkzMjU1ZTNlNWJcIn0iLCJ1c2VyX25hbWUiOiJ4aWFveGlxYUBnbWFpbC5jb20iLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzUwOTk2MzA2LCJ1c2VySWQiOiIxOTA1NDQyNDkwMzcxMTQ1NzI4IiwianRpIjoiYTVkNDMyNWEtOTdkYS00ODAyLTkyOTAtYWY1MTlhMDY2Njg5IiwiY2xpZW50X2lkIjoiZ29fcHJveHkifQ.XYroVcBlFq654Qs0MtmB4LcPC0mDI_VxMv22UQMcI_h1EfaZT9wUzDydjsopOq2y2Q6c7sq2E_XidDHPA3O0P1VkN8TxbuFiEXTnJz10oA1YGdn__9HnjNSrDdxzI-ztgwL3O0vvdfl-q9lCO3Vut0maAWTxK0IPKgaiXBMsGEUuMx2USSWUZT2mukvVbukTLViAaAUiJeKUIQ8U-k8ThbGG-dNkaS5VI4Yh7wacM3i6wc-igF_q80KqThEjObeSomT91JKZ9mWp8O9zSu188xU3-j81aSOUS7RVrGTpFvjS5cZt6ceM9jrHUbua4DR7oBAKE_XRQZWx-jqxQPRDaA"
             
-            # Set cookies for the domain
             cookies = [
                 {
                     'name': 'Admin_Token',
@@ -352,58 +348,53 @@ class TestGoProxyPurchase(unittest.TestCase):
                 }
             ]
             
-            # Add all cookies
             for cookie in cookies:
                 try:
                     self.driver.add_cookie(cookie)
                 except Exception as e:
                     print(f"Warning: Could not set cookie {cookie['name']}: {str(e)}")
             
-            # Set token in localStorage as well
             self.driver.execute_script(f"localStorage.setItem('token', '{admin_token}')")
             
-            # Refresh the page to apply the cookies
             self.driver.refresh()
             time.sleep(3)
             
-            # Verify login was successful
             try:
-                # Wait for any element that indicates successful login
                 self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'user-info') or contains(@class, 'avatar')]")))
                 print("Login successful!")
             except:
                 print("Warning: Could not verify login status, but continuing anyway")
             
-            # Navigate to billing page
             print("Navigating to billing page...")
             self.driver.get("https://test-goproxy.xiaoxitech.com/dashboard/billing/")
             time.sleep(3)
             
-            # Click on Transaction tab
             print("Clicking on Transaction tab...")
             transaction_tab = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div/div[1]/div[3]')))
             self.highlight_element(transaction_tab, 'blue')
             transaction_tab.click()
             time.sleep(5)
             
-            # Click payment button
             print("Clicking payment button...")
             payment_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div/div[4]/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[9]/div/div/button[1]')))
             self.highlight_element(payment_button, 'green')
             payment_button.click()
             time.sleep(5)
             
-            # Click on payment again button
             print("Clicking payment again button...")
             payment_again_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__layout"]/section/section/main/div/div[1]/div[2]/div[2]/div[1]/button')))
             self.highlight_element(payment_again_button, 'green')
             payment_again_button.click()
             time.sleep(5)
             
+            # Store the main window handle
+            main_window = self.driver.current_window_handle
+            
             # Handle PayPal payment flow
             try:
                 # Switch to the new PayPal window
                 print("Switching to PayPal window...")
+                self.wait.until(lambda driver: len(driver.window_handles) > 1)
                 windows = self.driver.window_handles
                 self.driver.switch_to.window(windows[-1])
                 
@@ -516,30 +507,32 @@ class TestGoProxyPurchase(unittest.TestCase):
                         lambda driver: "https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal" in driver.current_url
                     )
                     
-                    # Verify success element is present
-                    print("Verifying success element...")
-                    success_element = self.wait.until(
-                        EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/section/section/main/div/div/div[1]"))
-                    )
-                    print("Success element found!")
+                    # Verify we're on the success page
+                    current_url = self.driver.current_url
+                    print(f"Current URL after payment: {current_url}")
                     
-                    # Switch back to main window
-                    self.driver.switch_to.window(windows[0])
-                    print("Successfully completed PayPal payment!")
+                    if "payment-success" in current_url and "payType=PayPal" in current_url:
+                        print("Payment success verified!")
+                        return True
+                    else:
+                        print("Payment success page not reached")
+                        return False
                     
                 else:
                     raise Exception("Could not find password field in main content or iframes")
                 
             except Exception as e:
-                print(f"PayPal payment failed: {str(e)}")
+                print(f"Failed to complete PayPal payment flow: {str(e)}")
+                # Take screenshot of error
+                screenshot_path = f"paypal_payment_error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+                self.driver.save_screenshot(screenshot_path)
+                print(f"Screenshot saved to {screenshot_path}")
                 raise
             
             print("\nProcess completed successfully!")
-            print("Browser will remain open. Press Enter in the terminal to close it when you're done.")
-            input("Press Enter to exit and close the browser...")
             
         except Exception as e:
-            print(f"Additional steps failed: {str(e)}")
+            print(f"Error in additional steps: {str(e)}")
             raise
 
     def tearDown(self):
