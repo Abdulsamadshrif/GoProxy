@@ -3,8 +3,7 @@ This script automates the process of purchasing datacenter packages in the GoPro
 It performs the following steps:
 1. Navigates to the customer list page
 2. Searches for a specific user ID
-3. Performs top-up operation (currently disabled)
-4. Sets up a package with specific parameters
+3. Sets up a package with specific parameters
 """
 
 # Import required libraries
@@ -25,22 +24,10 @@ ADMIN_URL = "https://test-admin-goproxy.xiaoxitech.com/customer/customerList"
 USERNAME = "nazarabdulsamadbaba"
 PASSWORD = "Samad@2014"
 USER_DETAILS_URL = "https://test-admin-goproxy.xiaoxitech.com/customer/userList/customerDetails?id=853&brand=goproxy"
-TOPUP_AMOUNT = "100"
-
-# Feature flags
-ENABLE_TOPUP = False  # Set to False to disable top-up functionality
 
 class TestGoProxyPurchase(unittest.TestCase):
     def setUp(self):
         """Setup before each test"""
-        # Create directories for reports
-        self.reports_dir = "C:/Selenium_Tests/Reports"
-        os.makedirs(self.reports_dir, exist_ok=True)
-        
-        # Create report file
-        current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
-        self.report_file = os.path.join(self.reports_dir, f"test_goproxy_purchase_{current_time}.txt")
-        
         # Initialize browser
         chrome_options = webdriver.ChromeOptions()
         
@@ -140,7 +127,6 @@ class TestGoProxyPurchase(unittest.TestCase):
 
         except Exception as e:
             print(f"Login failed: {str(e)}")
-            # Take screenshot for debugging
             raise
 
     def tearDown(self):
@@ -229,35 +215,7 @@ class TestGoProxyPurchase(unittest.TestCase):
     def test_purchase_datacenter_packages(self):
         """Test the purchase of datacenter packages"""
         try:
-            # Top-up functionality (currently disabled)
-            if ENABLE_TOPUP:
-                # Step 1: Click Top up button
-                top_up_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]'
-                if not self.click_element(top_up_xpath, "Top up button"):
-                    raise Exception("Failed to click Top up button")
-
-                # Wait for the amount field to appear after clicking Top up
-                amount_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[5]/div/div/div[2]/div/form/div/div/div[1]/input'
-                try:
-                    print("Waiting for amount field to appear...")
-                    self.wait.until(EC.presence_of_element_located((By.XPATH, amount_xpath)))
-                    time.sleep(1)  # Additional wait for field to be ready
-                    print("Amount field found")
-                except Exception as e:
-                    print(f"Amount field not found: {str(e)}")
-                    
-                # Step 2: Enter amount
-                if not self.enter_text(amount_xpath, TOPUP_AMOUNT, "amount field"):
-                    raise Exception("Failed to enter amount")
-                
-                # Step 3: Click confirm button
-                confirm_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[5]/div/div/div[3]/span/button[2]'
-                if not self.click_element(confirm_xpath, "confirm button"):
-                    raise Exception("Failed to click confirm button")
-            else:
-                print("Top-up functionality is disabled")
-
-            # Step 4: Click set meal button - Enhanced for reliability
+            # Step 1: Click set meal button - Enhanced for reliability
             set_meal_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[2]/button[1]'
             
             # Wait for page to be fully loaded and button to be ready
@@ -335,12 +293,12 @@ class TestGoProxyPurchase(unittest.TestCase):
             # Wait for dropdown to open
             time.sleep(1)
 
-            # Step 6: Select 动态移动套餐 (Datacenter Package) - Optimized
+            # Step 6: Select 定制套餐 (Datacenter Package) - Optimized
             datacenter_option_found = False
             datacenter_xpaths = [
-                '//li[contains(text(), "动态移动套餐")]',  # By text - most reliable
-                '//html/body/div[6]/div[1]/div[1]/ul/li[4]',   # Specific path
-                '//span[contains(text(), "动态移动套餐")]'  # By span text
+                '//li[contains(text(), "定制套餐")]',  # By text - most reliable
+                '//html/body/div[3]/div[1]/div[1]/ul/li[6]',   # Specific path
+                '//span[contains(text(), "定制套餐")]'  # By span text
             ]
             
             for xpath in datacenter_xpaths:
@@ -348,67 +306,107 @@ class TestGoProxyPurchase(unittest.TestCase):
                     element = self.driver.find_element(By.XPATH, xpath)
                     if element.is_displayed():
                         self.driver.execute_script("arguments[0].click();", element)
-                        print("Selected 动态移动套餐")
+                        print("Selected 定制套餐")
                         datacenter_option_found = True
                         break
                 except:
                     continue
             
             if not datacenter_option_found:
-                raise Exception("Failed to select 动态移动套餐")
+                raise Exception("Failed to select 定制套餐")
 
             # Step 7: Click second dropdown
             second_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[2]/div/div/div/input'
             if not self.click_element(second_dropdown_xpath, "second dropdown"):
                 raise Exception("Failed to click second dropdown")
 
-            # Wait for dropdown to open
             time.sleep(1)
 
-            # Step 8: Select 非自动订阅 (Non-Auto Subscription) from the dropdown (robust method)
-            try:
-                print("Selecting 非自动订阅 (Non-Auto Subscription)...")
-                # Find all visible dropdowns
-                dropdowns = self.driver.find_elements(By.XPATH, "//ul[contains(@class, 'el-select-dropdown__list')]")
-                found = False
-                for dropdown in dropdowns:
-                    if dropdown.is_displayed():
-                        options = dropdown.find_elements(By.TAG_NAME, "li")
-                        for option in options:
-                            if "非自动订阅" in option.text:
-                                self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", option)
-                                time.sleep(0.2)
-                                self.driver.execute_script("arguments[0].click();", option)
-                                print("Successfully selected 非自动订阅")
-                                found = True
-                                break
-                        if found:
-                            break
-                if not found:
-                    raise Exception("Could not find 非自动订阅 option in dropdown")
-                time.sleep(0.5)
-            except Exception as e:
-                print(f"Failed to select 非自动订阅: {e}")
-                raise Exception("Failed to select 非自动订阅 in second dropdown")
+            # Step 8: Select first option from second dropdown
+            first_option_xpath = '/html/body/div[4]/div[1]/div[1]/ul/li[1]'
+            if not self.click_element(first_option_xpath, "first option"):
+                raise Exception("Failed to select first option")
 
-            # Step 9: Click third dropdown 
+            # Step 9: Click third dropdown
             third_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[3]/div/div/div/input'
             if not self.click_element(third_dropdown_xpath, "third dropdown"):
                 raise Exception("Failed to click third dropdown")
 
+            # Wait longer for dropdown to fully open and render
+            print("Waiting for third dropdown options to appear...")
+            time.sleep(2)
+
+            # Step 10: Select first option from third dropdown - Enhanced selection
+            try:
+                # Find all visible dropdowns
+                dropdowns = self.driver.find_elements(By.XPATH, "//ul[contains(@class, 'el-select-dropdown__list')]")
+                found = False
+                
+                for dropdown in dropdowns:
+                    if dropdown.is_displayed():
+                        # Try to find the first option in this dropdown
+                        try:
+                            options = dropdown.find_elements(By.TAG_NAME, "li")
+                            if options:
+                                # Scroll first option into view
+                                self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", options[0])
+                                time.sleep(0.5)
+                                
+                                # Try multiple click methods
+                                try:
+                                    options[0].click()
+                                except:
+                                    try:
+                                        self.driver.execute_script("arguments[0].click();", options[0])
+                                    except:
+                                        ActionChains(self.driver).move_to_element(options[0]).click().perform()
+                                
+                                print("Successfully selected first option from third dropdown")
+                                found = True
+                                break
+                        except Exception as e:
+                            print(f"Failed to interact with options in dropdown: {str(e)}")
+                            continue
+                
+                if not found:
+                    raise Exception("Could not find or click any options in the third dropdown")
+                
+                # Wait for selection to be applied
+                time.sleep(1)
+                
+            except Exception as e:
+                print(f"Failed to select option from third dropdown: {str(e)}")
+                raise Exception("Failed to select option from third dropdown")
+
+            # Step 11: Click fourth dropdown
+            fourth_dropdown_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[4]/div/div/div[1]/div[1]/div/input'
+            if not self.click_element(fourth_dropdown_xpath, "fourth dropdown"):
+                raise Exception("Failed to click fourth dropdown")
+
             time.sleep(1)
 
-            # Step 10: Select second option from third dropdown
-            third_option_xpath = '/html/body/div[5]/div[1]/div[1]/ul/li[2]/span'
-            if not self.click_element(third_option_xpath, "second option from third dropdown"):
-                raise Exception("Failed to select second option from third dropdown")
+            # Step 12: Select second option from fourth dropdown
+            fourth_option_xpath = '/html/body/div[6]/div[1]/div[1]/ul/li[2]/span'
+            if not self.click_element(fourth_option_xpath, "second option from fourth dropdown"):
+                raise Exception("Failed to select second option from fourth dropdown")
 
-            # Step 12: Click text box and enter 2
-            text_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[5]/div/div/input'
-            if not self.enter_text(text_box_xpath, "2", "text box"):
-                raise Exception("Failed to enter 2 in text box")
+            # Step 13: Click number box and enter 3
+            number_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[4]/div/div/div[1]/div[2]/div/input'
+            try:
+                number_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, number_box_xpath)))
+                number_element.clear()
+                number_element.send_keys("3")
+                print("Entered 3 in number box")
+            except Exception as e:
+                raise Exception("Failed to enter 3 in number box")
+
+            # Step 14: Click text box and enter 9
+            text_box_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[2]/div/form/div[6]/div/div/input'
+            if not self.enter_text(text_box_xpath, "9", "text box"):
+                raise Exception("Failed to enter 9 in text box")
      
-            # Step 13: Click confirm button
+         
+            # Step 15: Click confirm button
             confirm_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[6]/div/div/div[3]/span/button[2]'
             if not self.click_element_optimized(confirm_button_xpath, "confirm button"):
                 if not self.click_element(confirm_button_xpath, "confirm button fallback"):
@@ -417,7 +415,7 @@ class TestGoProxyPurchase(unittest.TestCase):
             # Wait for popup to close
             time.sleep(2)
 
-            # Step 14: Click payment confirm button
+            # Step 16: Click payment confirm button
             payment_confirm_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[19]/div/div/div/button[1]'
             try:
                 # Wait for table and find button
@@ -434,7 +432,7 @@ class TestGoProxyPurchase(unittest.TestCase):
                 print(f"Failed to click payment confirm button: {e}")
                 raise Exception("Failed to click payment confirm button")
 
-            # Step 15: Click sure button in popup
+            # Step 17: Click sure button in popup
             sure_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[3]/div/div/div[3]/span/button[2]'
             try:
                 sure_button = self.wait.until(EC.element_to_be_clickable((By.XPATH, sure_button_xpath)))
@@ -445,6 +443,30 @@ class TestGoProxyPurchase(unittest.TestCase):
                 raise Exception("Failed to click sure button")
 
             time.sleep(1)
+
+            # Step 18: Click 定制套餐 tab
+            datacenter_tab_xpath = '//*[@id="tab-customPackage"]'
+            if not self.click_element(datacenter_tab_xpath, "datacenter tab"):
+                raise Exception("Failed to click datacenter tab")
+
+            time.sleep(1)
+
+            # Step 19: Click cluster button
+            cluster_button_xpath = '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table/tbody/tr[1]/td[9]/div/div/div/div/button[4]'
+            try:
+                # Wait for table and find button
+                self.wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div/section/div/div[2]/div[4]/div[2]/div[1]/div/div[3]/table')))
+                cluster_button = self.wait.until(EC.presence_of_element_located((By.XPATH, cluster_button_xpath)))
+                
+                # Scroll and click
+                self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", cluster_button)
+                time.sleep(0.5)
+                cluster_button.click()
+                print("Clicked cluster button")
+                
+            except Exception as e:
+                print(f"Failed to click cluster button: {e}")
+                raise Exception("Failed to click cluster button")
 
             print("✅ Test completed successfully!")
             print("🌐 Browser will remain open for inspection.")
@@ -462,41 +484,6 @@ class TestGoProxyPurchase(unittest.TestCase):
             print("🔍 You can manually inspect the error state")
             input("🔴 Press Enter when you want to close the browser and exit the script...")
             raise
-
-    def _select_dropdown_option_by_text(self, dropdown_xpath, option_text, description):
-        """Select an option from a dropdown by its visible text"""
-        try:
-            # Click the dropdown to open it
-            self.click_element(dropdown_xpath, f"{description} dropdown")
-
-            # Find all visible dropdowns
-            dropdowns = self.driver.find_elements(By.XPATH, "//ul[contains(@class, 'el-select-dropdown__list')]")
-
-            found_option = False
-            for dropdown_container in dropdowns:
-                if not dropdown_container.is_displayed():
-                    continue
-                try:
-                    # Search for the option within this visible dropdown
-                    option_to_click = dropdown_container.find_element(By.XPATH, f".//li[.//span[contains(text(), '{option_text}')] or contains(text(), '{option_text}')]")
-                    if option_to_click.is_displayed():
-                        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", option_to_click)
-                        self.human_delay(0.1, 0.3)
-                        self._highlight_element(option_to_click, color="purple")
-                        option_to_click.click()
-                        print(f"Selected '{option_text}' from {description} dropdown.")
-                        found_option = True
-                        break
-                except Exception:
-                    continue # Option not in this dropdown or not interactable
-            
-            if not found_option:
-                print(f"Could not find '{option_text}' in {description} dropdown.")
-                return False
-            return True
-        except Exception as e:
-            print(f"Failed to select option from {description} dropdown: {str(e)}")
-            return False
 
 if __name__ == '__main__':
     unittest.main(verbosity=2) 
