@@ -286,11 +286,10 @@ def login(report_dir):
         # Step 5: Wait for manual CAPTCHA
         print("\n--- Step 5: Waiting for manual CAPTCHA and login ---")
         print("Please complete the CAPTCHA and click the login button manually")
-        input("Press Enter after you have completed the CAPTCHA and clicked login...")
         
-        # Step 6: Verify login success
+        # Wait for login success by checking URL change
+        print("Waiting for login to complete...")
         try:
-            print("\n--- Step 6: Verifying login success ---")
             wait.until(EC.url_contains("test-admin-ipipgo.cd.xiaoxigroup.net/app-manager"))
             print("Login successful")
         except Exception as e:

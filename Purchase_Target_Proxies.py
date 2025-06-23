@@ -98,9 +98,12 @@ class TestGoProxyPurchase(unittest.TestCase):
             if not self.enter_text(password_xpath, PASSWORD, "password field"):
                 raise Exception("Failed to enter password")
 
-            # Step 4: Wait for manual captcha input and press enter
-            print("\nPlease enter the captcha manually and press Enter to continue...")
-            input("Press Enter after entering the captcha...")
+            # Step 4: Click CAPTCHA text box and wait for manual input
+            captcha_xpath = '//*[@id="app"]/div/div/form/div[3]/div/div/div[1]/input'
+            if not self.click_element(captcha_xpath, "captcha text box"):
+                raise Exception("Failed to click captcha text box")
+            
+            print("\nPlease enter the captcha manually and click Enter in the browser...")
             
             # Wait for login to complete by waiting for the login form to disappear
             print("Waiting for login to complete...")
