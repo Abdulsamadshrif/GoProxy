@@ -1,0 +1,669 @@
+
+MASTER TEST EXECUTION REPORT
+Generated on: 2025-07-04 09:45:04
+Report Directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\reports\master_test_run_20250704_091443
+
+================================================================================
+EXECUTION SUMMARY
+================================================================================
+
+Total Tests: 14
+
+Passed: 12
+Failed: 2
+Timeout: 0
+Error: 0
+Total Duration: 1820.75 seconds (30.35 minutes)
+
+================================================================================
+DETAILED TEST RESULTS
+================================================================================
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Target_Proxies_Backend_Frondend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 143.13 seconds
+Return Code: 1
+
+Failed Steps:
+  - Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+    Error: Failed to enter text in amount field: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  - === TEST FAILED ===
+    Error: X Test failed with error: Failed to setup target proxies package
+
+Error Summary:
+Failed to enter text in amount field: Message: invalid element state: Element is not currently interactable and may not be manipulated
+
+Last Successful Step:
+=== Test completed ===
+
+Test Output (last 50 lines):
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked capacity dropdown
+Attempting to select using keyboard navigation from capacity
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked location dropdown
+Attempting to select using keyboard navigation from location
+Selected option using keyboard navigation (5 steps down)
+Attempting to enter text '10' in amount field
+Failed to enter text in amount field: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=138.0.7204.49)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff77b6e6f95+76917]
+	GetHandleVerifier [0x0x7ff77b6e6ff0+77008]
+	(No symbol) [0x0x7ff77b499dea]
+	(No symbol) [0x0x7ff77b4a1789]
+	(No symbol) [0x0x7ff77b4a482c]
+	(No symbol) [0x0x7ff77b4a48ff]
+	(No symbol) [0x0x7ff77b4e60bb]
+	(No symbol) [0x0x7ff77b51846a]
+	(No symbol) [0x0x7ff77b4e2c16]
+	(No symbol) [0x0x7ff77b518680]
+	(No symbol) [0x0x7ff77b54065c]
+	(No symbol) [0x0x7ff77b518243]
+	(No symbol) [0x0x7ff77b4e1431]
+	(No symbol) [0x0x7ff77b4e21c3]
+	GetHandleVerifier [0x0x7ff77b9bd2cd+3051437]
+	GetHandleVerifier [0x0x7ff77b9b7923+3028483]
+	GetHandleVerifier [0x0x7ff77b9d58bd+3151261]
+	GetHandleVerifier [0x0x7ff77b70185e+185662]
+	GetHandleVerifier [0x0x7ff77b70971f+218111]
+	GetHandleVerifier [0x0x7ff77b6efb14+112628]
+	GetHandleVerifier [0x0x7ff77b6efcc9+113065]
+	GetHandleVerifier [0x0x7ff77b6d6c98+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+Package setup failed: Failed to enter amount
+
+=== TEST FAILED ===
+X Test failed with error: Failed to setup target proxies package
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Target_Proxies_Backend_Frondend_run_20250704_091447
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Target_Proxies_Backend_Frondend_run_20250704_091447\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Target_Proxies_Backend_Frondend_run_20250704_091447\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Purchase_Static_Residential_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 252.07 seconds
+Return Code: 0
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 123.31 seconds
+Return Code: 1
+
+
+--------------------------------------------------------------------------------
++ TEST: Purchase_Rotating_Datacenter_Backend_Fronded.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 155.21 seconds
+Return Code: 0
+
+
+--------------------------------------------------------------------------------
++ TEST: Purchase_Residential_Proxy_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 82.37 seconds
+Return Code: 0
+
+
+--------------------------------------------------------------------------------
++ TEST: Purchase_Mobile_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 88.58 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+Found element using JavaScript text search
+Successfully clicked the non-auto subscription option
+Clicked capacity dropdown
+Clicked Mobile-1G option
+
+Setting amount...
+Attempting to enter text '2' in amount
+Actual value in field: 2
+Successfully entered 2 in amount
+
+=== Confirming purchase ===
+Success message found!
+
+=== Starting payment flow ===
+Navigating to main website...
+Setting authentication cookies...
+Login successful!
+Navigating to billing page...
+Clicking on Transaction tab...
+Clicking payment button...
+Clicking payment again button...
+
+=== Completing PayPal payment ===
+Switching to PayPal window...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=1R574522ED852590V
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+
+=== Verifying Payment Success ===
+Current URL: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal&orderNo=1940945813748449280&originalOrderNo=HW20250704092812589&mealType=5&token=1R574522ED852590V&PayerID=DF6KEN93XQD8G
+PayPal payment success detected
+Success element found!
+
+=== TEST PASSED ===
++ Payment successful
++ Success page reached
++ Success element found
++ Test completed successfully
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250704_092731
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250704_092731\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250704_092731\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Purchase_Datacenter_Package_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 124.96 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+Stacktrace:
+	GetHandleVerifier [0x0x7ff77b6e6f95+76917]
+	GetHandleVerifier [0x0x7ff77b6e6ff0+77008]
+	(No symbol) [0x0x7ff77b499dea]
+	(No symbol) [0x0x7ff77b4f0256]
+	(No symbol) [0x0x7ff77b4f050c]
+	(No symbol) [0x0x7ff77b543887]
+	(No symbol) [0x0x7ff77b5184af]
+	(No symbol) [0x0x7ff77b54065c]
+	(No symbol) [0x0x7ff77b518243]
+	(No symbol) [0x0x7ff77b4e1431]
+	(No symbol) [0x0x7ff77b4e21c3]
+	GetHandleVerifier [0x0x7ff77b9bd2cd+3051437]
+	GetHandleVerifier [0x0x7ff77b9b7923+3028483]
+	GetHandleVerifier [0x0x7ff77b9d58bd+3151261]
+	GetHandleVerifier [0x0x7ff77b70185e+185662]
+	GetHandleVerifier [0x0x7ff77b70971f+218111]
+	GetHandleVerifier [0x0x7ff77b6efb14+112628]
+	GetHandleVerifier [0x0x7ff77b6efcc9+113065]
+	GetHandleVerifier [0x0x7ff77b6d6c98+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+
+=== TEST PASSED ===
++ Admin interface navigation successful
++ Package setup completed
++ Purchase confirmed
++ Payment flow completed
++ PayPal payment successful
++ Success verification passed
++ Package closure completed
++ Test completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Dynamic Package Purchase: PASSED
+
+Overall Results:
+  Passed: 1
+  Failed: 0
+  Skipped: 0
+  Total: 1
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Datacenter_Package_Backend_Frontend_run_20250704_092902
+
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Target_proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 174.47 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+  (Session info: chrome=138.0.7204.49); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff77b6e6f95+76917]
+	GetHandleVerifier [0x0x7ff77b6e6ff0+77008]
+	(No symbol) [0x0x7ff77b499dea]
+	(No symbol) [0x0x7ff77b4a1789]
+	(No symbol) [0x0x7ff77b4a482c]
+	(No symbol) [0x0x7ff77b4a48ff]
+	(No symbol) [0x0x7ff77b4e9d66]
+	(No symbol) [0x0x7ff77b51846a]
+	(No symbol) [0x0x7ff77b4e2c16]
+	(No symbol) [0x0x7ff77b518680]
+	(No symbol) [0x0x7ff77b54065c]
+	(No symbol) [0x0x7ff77b518243]
+	(No symbol) [0x0x7ff77b4e1431]
+	(No symbol) [0x0x7ff77b4e21c3]
+	GetHandleVerifier [0x0x7ff77b9bd2cd+3051437]
+	GetHandleVerifier [0x0x7ff77b9b7923+3028483]
+	GetHandleVerifier [0x0x7ff77b9d58bd+3151261]
+	GetHandleVerifier [0x0x7ff77b70185e+185662]
+	GetHandleVerifier [0x0x7ff77b70971f+218111]
+	GetHandleVerifier [0x0x7ff77b6efb14+112628]
+	GetHandleVerifier [0x0x7ff77b6efcc9+113065]
+	GetHandleVerifier [0x0x7ff77b6d6c98+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+X Wallet Payment With Balance: FAILED
++ Wallet Payment Without Balance: PASSED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 1
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Target_proxies_payment_20250704_093109
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Target_proxies_payment_20250704_093109\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Static_Residential_Proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 215.63 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+============================================================
+CLOSING PACKAGE FOR ACCOUNT 872
+============================================================
+
+=== Starting package closure process for account 872 ===
+
+--- Step 1: Navigating to admin panel ---
+Page loaded successfully
+
+--- Step 2: Navigating to customer details for account 872 ---
+Page loaded successfully
+
+--- Step 3: Clicking Static Package tab ---
+
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
+X Wallet Payment Without Balance: FAILED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 1
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Static_Residential_Payment_test_run_20250704_093405
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Static_Residential_Payment_test_run_20250704_093405\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Datacenter_Proxies_static_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 201.92 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+=== Package closure failed with error for account 871: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined> ===
+X Package closure failed for account 871: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+============================================================
+CLOSING PACKAGE FOR ACCOUNT 872
+============================================================
+
+=== Starting package closure process for account 872 ===
+
+--- Step 1: Navigating to admin panel ---
+
+--- Step 2: Navigating to customer details for account 872 ---
+Page loaded successfully
+
+--- Step 3: Clicking Static Package tab ---
+
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+=== Package closure failed with error for account 872: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined> ===
+X Package closure failed for account 872: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
+X Wallet Payment Without Balance: FAILED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 1
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Datacenter_Payment_test_run_20250704_093743
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Datacenter_Payment_test_run_20250704_093743\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Unlimited_Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 58.65 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=9CR44564SB570653G
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+*** All tests passed!
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250704_094107\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Mobile_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 57.34 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=6MV62094HV2871803
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+*** All tests passed!
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250704_094207\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Datacenter_Proxies_Rotating_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 58.25 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=99V80882GJ682652W
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+*** All tests passed! ***
+
+[REPORT] HTML report generated: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250704_094307\test_report.html
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
++ TEST: Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: PASSED
+Duration: 56.81 seconds
+Return Code: 0
+
+Test Output (last 50 lines):
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=0R513838NB616302V
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY - DYNAMIC RESIDENCE PAYMENTS
+============================================================
++ Wallet Payment With Balance: PASSED
++ Wallet Payment Without Balance: PASSED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 0
+  Total: 4
+
+=== Cleaning up and closing browser ===
+
+
+
+================================================================================
+END OF REPORT
+================================================================================

@@ -1,0 +1,931 @@
+
+MASTER TEST EXECUTION REPORT
+Generated on: 2025-06-30 11:20:16
+Report Directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\reports\master_test_run_20250630_105232
+
+================================================================================
+EXECUTION SUMMARY
+================================================================================
+
+Total Tests: 15
+
+Passed: 0
+Failed: 15
+Timeout: 0
+Error: 0
+Total Duration: 1664.43 seconds (27.74 minutes)
+
+================================================================================
+DETAILED TEST RESULTS
+================================================================================
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Target_Proxies_Backend_Frondend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 136.10 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 679, in test_target_proxies_package_purchase
+    raise Exception("Failed to setup target proxies package")
+Exception: Failed to setup target proxies package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 723, in <module>
+    result = test_target_proxies_package_purchase(driver, report_dir, test_case)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 706, in test_target_proxies_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 732, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Attempting to select using keyboard navigation from subscription type
+Selected option using keyboard navigation (6 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked auto subscription dropdown
+Attempting to select using keyboard navigation from auto subscription
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked capacity dropdown
+Attempting to select using keyboard navigation from capacity
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked location dropdown
+Attempting to select using keyboard navigation from location
+Selected option using keyboard navigation (5 steps down)
+Attempting to enter text '10' in amount field
+Failed to enter text in amount field: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=138.0.7204.49)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6609d6f65+76917]
+	GetHandleVerifier [0x0x7ff6609d6fc0+77008]
+	(No symbol) [0x0x7ff660789dea]
+	(No symbol) [0x0x7ff660791789]
+	(No symbol) [0x0x7ff66079482c]
+	(No symbol) [0x0x7ff6607948ff]
+	(No symbol) [0x0x7ff6607d60bb]
+	(No symbol) [0x0x7ff66080846a]
+	(No symbol) [0x0x7ff6607d2c16]
+	(No symbol) [0x0x7ff660808680]
+	(No symbol) [0x0x7ff66083065c]
+	(No symbol) [0x0x7ff660808243]
+	(No symbol) [0x0x7ff6607d1431]
+	(No symbol) [0x0x7ff6607d21c3]
+	GetHandleVerifier [0x0x7ff660cad29d+3051437]
+	GetHandleVerifier [0x0x7ff660ca78f3+3028483]
+	GetHandleVerifier [0x0x7ff660cc588d+3151261]
+	GetHandleVerifier [0x0x7ff6609f182e+185662]
+	GetHandleVerifier [0x0x7ff6609f96ef+218111]
+	GetHandleVerifier [0x0x7ff6609dfae4+112628]
+	GetHandleVerifier [0x0x7ff6609dfc99+113065]
+	GetHandleVerifier [0x0x7ff6609c6c68+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+Package setup failed: Failed to enter amount
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Static_Residential_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 50.35 seconds
+Return Code: 1
+
+Test Output:
+
+=== Running Static Residential Package Purchase test with report directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Static_Residential_Backend_Frontend_run_20250630_105452 ===
+
+=== Starting Static Residential Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up static residential proxy package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-25: character maps to <undefined>
+Package setup failed: Failed to select static package
+
+=== TEST FAILED ===
+X Test failed with error: Failed to setup static residential package
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Static_Residential_Backend_Frontend_run_20250630_105452
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Static_Residential_Backend_Frontend_run_20250630_105452\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Static_Residential_Backend_Frontend_run_20250630_105452\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 71.81 seconds
+Return Code: 1
+
+Test Output (last 50 lines):
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up unlimited residential proxies package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-28: character maps to <undefined>
+Attempting to select option using XPath from subscription type
+Failed XPath selection: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6609d6f65+76917]
+	GetHandleVerifier [0x0x7ff6609d6fc0+77008]
+	(No symbol) [0x0x7ff660789dea]
+	(No symbol) [0x0x7ff6607e0256]
+	(No symbol) [0x0x7ff6607e050c]
+	(No symbol) [0x0x7ff660833887]
+	(No symbol) [0x0x7ff6608084af]
+	(No symbol) [0x0x7ff66083065c]
+	(No symbol) [0x0x7ff660808243]
+	(No symbol) [0x0x7ff6607d1431]
+	(No symbol) [0x0x7ff6607d21c3]
+	GetHandleVerifier [0x0x7ff660cad29d+3051437]
+	GetHandleVerifier [0x0x7ff660ca78f3+3028483]
+	GetHandleVerifier [0x0x7ff660cc588d+3151261]
+	GetHandleVerifier [0x0x7ff6609f182e+185662]
+	GetHandleVerifier [0x0x7ff6609f96ef+218111]
+	GetHandleVerifier [0x0x7ff6609dfae4+112628]
+	GetHandleVerifier [0x0x7ff6609dfc99+113065]
+	GetHandleVerifier [0x0x7ff6609c6c68+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+Package setup failed: Failed to select dynamic unlimited package
+
+=== TEST FAILED ===
+X Test failed with error: Failed to setup unlimited residential package
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Unlimited_Residential_Proxies_Backend_Frontend_run_20250630_105544
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Unlimited_Residential_Proxies_Backend_Frontend_run_20250630_105544\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Unlimited_Residential_Proxies_Backend_Frontend_run_20250630_105544\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Rotating_Datacenter_Backend_Fronded.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 49.93 seconds
+Return Code: 1
+
+Test Output:
+
+=== Running Rotating Datacenter Package Purchase test with report directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Rotating_Datacenter_Backend_Fronded_run_20250630_105658 ===
+
+=== Starting Rotating Datacenter Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up rotating datacenter proxy package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-29: character maps to <undefined>
+Package setup failed: Failed to select dynamic datacenter package
+
+=== TEST FAILED ===
+X Test failed with error: Failed to setup rotating datacenter package
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Rotating_Datacenter_Backend_Fronded_run_20250630_105658
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Rotating_Datacenter_Backend_Fronded_run_20250630_105658\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Rotating_Datacenter_Backend_Fronded_run_20250630_105658\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Residential_Proxy_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 60.10 seconds
+Return Code: 1
+
+Test Output:
+
+=== Running Residential Package Purchase test with report directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Residential_Proxy_Backend+Frontend_run_20250630_105750 ===
+
+=== Starting Residential Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up residential proxy package ===
+Clicked set meal button
+Clicked subscription dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-26: character maps to <undefined>
+Package setup failed: Failed to select subscription type
+
+=== TEST FAILED ===
+X Test failed with error: Failed to setup residential package
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Residential_Proxy_Backend+Frontend_run_20250630_105750
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Residential_Proxy_Backend+Frontend_run_20250630_105750\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Residential_Proxy_Backend+Frontend_run_20250630_105750\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Mobile_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 101.36 seconds
+Return Code: 1
+
+Test Output (last 50 lines):
+=== Setting up mobile package ===
+Clicked set meal button
+
+Clicking subscription type dropdown...
+
+Attempting to select mobile package...
+Attempt 1 of 3
+Found element using JavaScript text search
+Successfully clicked the mobile package option
+Clicked auto subscription dropdown
+
+Attempting to select non-auto subscription option...
+Attempt 1 of 3
+Found element using JavaScript text search
+Successfully clicked the non-auto subscription option
+Clicked capacity dropdown
+Clicked Mobile-1G option
+
+Setting amount...
+Attempting to enter text '2' in amount
+Actual value in field: 2
+Successfully entered 2 in amount
+
+=== Confirming purchase ===
+Success message found!
+
+=== Starting payment flow ===
+Navigating to main website...
+Setting authentication cookies...
+Login successful!
+Navigating to billing page...
+Clicking on Transaction tab...
+Clicking payment button...
+Clicking payment again button...
+
+=== Completing PayPal payment ===
+Switching to PayPal window...
+Failed to complete PayPal payment flow: Message: 
+
+
+=== TEST FAILED ===
+X Test failed with error: Failed to complete PayPal payment
+X Test failed
+
+=== Test completed ===
+Reports saved to: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250630_105852
+- HTML Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250630_105852\test_report.html
+- Text Report: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Mobile_Proxies_Backend_Frontend_run_20250630_105852\test_report.txt
+Browser closed successfully
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Purchase_Datacenter_Package_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 105.67 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Datacenter_Package_Backend_Frontend.py", line 809, in <module>
+    print(captured_output)
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 2728-2730: character maps to <undefined>
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Target_proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 171.16 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Target_proxies_payment_Frontend_Backend.py", line 1173, in <module>
+    print(f"\n\U0001f4ca HTML report generated: {report_file}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 2: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+ ===
+X Package closure failed for account 872: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=138.0.7204.49); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6609d6f65+76917]
+	GetHandleVerifier [0x0x7ff6609d6fc0+77008]
+	(No symbol) [0x0x7ff660789dea]
+	(No symbol) [0x0x7ff660791789]
+	(No symbol) [0x0x7ff66079482c]
+	(No symbol) [0x0x7ff6607948ff]
+	(No symbol) [0x0x7ff6607d9d66]
+	(No symbol) [0x0x7ff66080846a]
+	(No symbol) [0x0x7ff6607d2c16]
+	(No symbol) [0x0x7ff660808680]
+	(No symbol) [0x0x7ff66083065c]
+	(No symbol) [0x0x7ff660808243]
+	(No symbol) [0x0x7ff6607d1431]
+	(No symbol) [0x0x7ff6607d21c3]
+	GetHandleVerifier [0x0x7ff660cad29d+3051437]
+	GetHandleVerifier [0x0x7ff660ca78f3+3028483]
+	GetHandleVerifier [0x0x7ff660cc588d+3151261]
+	GetHandleVerifier [0x0x7ff6609f182e+185662]
+	GetHandleVerifier [0x0x7ff6609f96ef+218111]
+	GetHandleVerifier [0x0x7ff6609dfae4+112628]
+	GetHandleVerifier [0x0x7ff6609dfc99+113065]
+	GetHandleVerifier [0x0x7ff6609c6c68+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
++ Wallet Payment Without Balance: PASSED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 5
+  Failed: 0
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Target_proxies_payment_20250630_110223
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Static_Residential_Proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 219.95 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Static_Residential_Proxies_payment_Frontend_Backend.py", line 1109, in <module>
+    print(f"\n\U0001f4ca HTML report generated: {report_file}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 2: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+============================================================
+CLOSING PACKAGE FOR ACCOUNT 872
+============================================================
+
+=== Starting package closure process for account 872 ===
+
+--- Step 1: Navigating to admin panel ---
+Page loaded successfully
+
+--- Step 2: Navigating to customer details for account 872 ---
+Page loaded successfully
+
+--- Step 3: Clicking Static Package tab ---
+
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
+X Wallet Payment Without Balance: FAILED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 1
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Static_Residential_Payment_test_run_20250630_110516
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Datacenter_Proxies_static_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 189.31 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_static_payment_Frontend_Backend.py", line 1130, in <module>
+    print(f"\n\U0001f4ca HTML report generated: {report_file}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 2: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+=== Package closure failed with error for account 871: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined> ===
+X Package closure failed for account 871: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+============================================================
+CLOSING PACKAGE FOR ACCOUNT 872
+============================================================
+
+=== Starting package closure process for account 872 ===
+
+--- Step 1: Navigating to admin panel ---
+Page loaded successfully
+
+--- Step 2: Navigating to customer details for account 872 ---
+Page loaded successfully
+
+--- Step 3: Clicking Static Package tab ---
+
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
+
+=== Package closure failed with error for account 872: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined> ===
+X Package closure failed for account 872: 'charmap' codec can't encode characters in position 29-31: character maps to <undefined>
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
++ Wallet Payment Without Balance: PASSED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 5
+  Failed: 0
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Datacenter_Payment_test_run_20250630_110858
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Unlimited_Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 63.30 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 826, in <module>
+    success = main()
+              ^^^^^^
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 811, in main
+    print("\U0001f389 All tests passed!")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f389' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 3: Verifying Google Pay Popup ---
+Found Google Pay popup
+
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=0HT902681V274145H
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Mobile_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 67.08 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 826, in <module>
+    success = main()
+              ^^^^^^
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 811, in main
+    print("\U0001f389 All tests passed!")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f389' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 3: Verifying Google Pay Popup ---
+Found Google Pay popup
+
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=4PK559361J910272H
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Datacenter_Proxies_Rotating_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 63.78 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 829, in <module>
+    success = main()
+              ^^^^^^
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 811, in main
+    print("\U0001f389 All tests passed!")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f389' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 3: Verifying Google Pay Popup ---
+Found Google Pay popup
+
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=66S60629SG220533K
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
+wallet_payment_with_balance: PASSED
+wallet_payment_without_balance: PASSED
+google_pay_payment: PASSED
+paypal_payment: PASSED
+
+Overall Result: 4/4 tests passed
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 61.79 seconds
+Return Code: 1
+
+Test Output (last 50 lines):
+--- Step 4: Closing Google Pay Popup ---
+Closed Google Pay popup successfully
++ Test 3 completed: PASSED
+
+============================================================
+TEST 4: PAYPAL PAYMENT
+============================================================
+
+=== Starting PayPal payment test ===
+
+--- Step 1: Selecting PayPal Payment Method ---
+Trying selector: div[data-v-199ea5d0].pay-info
+Found PayPal option with selector: div[data-v-199ea5d0].pay-info
+Scrolling PayPal option into view...
+PayPal option is clickable
+Attempting to click using JavaScript
+Clicked PayPal option using JavaScript
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Completing PayPal Sandbox Login ---
+Waiting for PayPal sandbox window to open...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=9PE89789P0291431T
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+Waiting for payment success page...
+Verifying success element...
+Success element found!
++ Test 4 completed: PASSED
+
+============================================================
+FINAL TEST SUMMARY - DYNAMIC RESIDENCE PAYMENTS
+============================================================
++ Wallet Payment With Balance: PASSED
++ Wallet Payment Without Balance: PASSED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 0
+  Total: 4
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+X TEST: 000test.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 222.65 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\000test.py", line 1109, in <module>
+    print(f"\n\U0001f4ca HTML report generated: {report_file}")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 2: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 871: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+============================================================
+CLOSING PACKAGE FOR ACCOUNT 872
+============================================================
+
+=== Starting package closure process for account 872 ===
+
+--- Step 1: Navigating to admin panel ---
+Page loaded successfully
+
+--- Step 2: Navigating to customer details for account 872 ---
+Page loaded successfully
+
+--- Step 3: Clicking Static Package tab ---
+
+--- Step 4: Clicking Closure button ---
+
+--- Step 5: Verifying success message appears ---
+ERROR: Failed to verify success message: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
+
+=== Package closure failed with error for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined> ===
+X Package closure failed for account 872: 'charmap' codec can't encode characters in position 32-34: character maps to <undefined>
++ Test 5 passed
+
+============================================================
+FINAL TEST SUMMARY
+============================================================
++ Wallet Payment With Balance: PASSED
+X Wallet Payment Without Balance: FAILED
++ Google Pay Payment: PASSED
++ Paypal Payment: PASSED
++ Package Closure: PASSED
+
+Overall Results:
+  Passed: 4
+  Failed: 1
+  Skipped: 0
+  Total: 5
+
+Test reports saved in: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Static_Residential_Payment_test_run_20250630_111634
+
+=== Cleaning up and closing browser ===
+
+
+
+================================================================================
+END OF REPORT
+================================================================================

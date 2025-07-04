@@ -1,0 +1,190 @@
+
+MASTER TEST EXECUTION REPORT
+Generated on: 2025-06-30 09:53:19
+Report Directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\reports\master_test_run_20250630_095249
+
+================================================================================
+EXECUTION SUMMARY
+================================================================================
+
+Total Tests: 15
+
+Passed: 0
+Failed: 0
+Timeout: 0
+Error: 15
+Total Duration: 30.05 seconds (0.50 minutes)
+
+================================================================================
+DETAILED TEST RESULTS
+================================================================================
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Target_Proxies_Backend_Frondend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Target_Proxies_Backend_Frondend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Static_Residential_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Static_Residential_Backend+Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Rotating_Datacenter_Backend_Fronded.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Rotating_Datacenter_Backend_Fronded.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Residential_Proxy_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Residential_Proxy_Backend+Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Mobile_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Mobile_Proxies_Backend_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Purchase_Datacenter_Package_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Purchase_Datacenter_Package_Backend_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Target_proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Target_proxies_payment_Frontend_Backend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Static_Residential_Proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Static_Residential_Proxies_payment_Frontend_Backend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Datacenter_Proxies_static_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Datacenter_Proxies_static_payment_Frontend_Backend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Unlimited_Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Unlimited_Residential_Proxies_payment_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Mobile_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Mobile_Proxies_payment_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Datacenter_Proxies_Rotating_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Datacenter_Proxies_Rotating_payment_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: Residential_Proxies_payment_Frontend.py
+
+
+--------------------------------------------------------------------------------
+⚠ TEST: 000test.py
+--------------------------------------------------------------------------------
+Status: ERROR
+Duration: 0.00 seconds
+Return Code: -2
+
+Error Output:
+Test file not found: 000test.py
+
+
+================================================================================
+END OF REPORT
+================================================================================

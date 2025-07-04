@@ -1,0 +1,1151 @@
+
+MASTER TEST EXECUTION REPORT
+Generated on: 2025-06-30 10:35:23
+Report Directory: C:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\reports\master_test_run_20250630_102129
+
+================================================================================
+EXECUTION SUMMARY
+================================================================================
+
+Total Tests: 15
+
+Passed: 0
+Failed: 15
+Timeout: 0
+Error: 0
+Total Duration: 833.35 seconds (13.89 minutes)
+
+================================================================================
+DETAILED TEST RESULTS
+================================================================================
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Target_Proxies_Backend_Frondend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 136.12 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 679, in test_target_proxies_package_purchase
+    raise Exception("Failed to setup target proxies package")
+Exception: Failed to setup target proxies package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 723, in <module>
+    result = test_target_proxies_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 706, in test_target_proxies_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 732, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Attempting to select using keyboard navigation from subscription type
+Selected option using keyboard navigation (6 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked auto subscription dropdown
+Attempting to select using keyboard navigation from auto subscription
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked capacity dropdown
+Attempting to select using keyboard navigation from capacity
+Selected option using keyboard navigation (1 steps down)
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked location dropdown
+Attempting to select using keyboard navigation from location
+Selected option using keyboard navigation (5 steps down)
+Attempting to enter text '10' in amount field
+Failed to enter text in amount field: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=138.0.7204.49)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6609d6f65+76917]
+	GetHandleVerifier [0x0x7ff6609d6fc0+77008]
+	(No symbol) [0x0x7ff660789dea]
+	(No symbol) [0x0x7ff660791789]
+	(No symbol) [0x0x7ff66079482c]
+	(No symbol) [0x0x7ff6607948ff]
+	(No symbol) [0x0x7ff6607d60bb]
+	(No symbol) [0x0x7ff66080846a]
+	(No symbol) [0x0x7ff6607d2c16]
+	(No symbol) [0x0x7ff660808680]
+	(No symbol) [0x0x7ff66083065c]
+	(No symbol) [0x0x7ff660808243]
+	(No symbol) [0x0x7ff6607d1431]
+	(No symbol) [0x0x7ff6607d21c3]
+	GetHandleVerifier [0x0x7ff660cad29d+3051437]
+	GetHandleVerifier [0x0x7ff660ca78f3+3028483]
+	GetHandleVerifier [0x0x7ff660cc588d+3151261]
+	GetHandleVerifier [0x0x7ff6609f182e+185662]
+	GetHandleVerifier [0x0x7ff6609f96ef+218111]
+	GetHandleVerifier [0x0x7ff6609dfae4+112628]
+	GetHandleVerifier [0x0x7ff6609dfc99+113065]
+	GetHandleVerifier [0x0x7ff6609c6c68+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+Package setup failed: Failed to enter amount
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Static_Residential_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 45.07 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 657, in test_static_residential_package_purchase
+    raise Exception("Failed to setup static residential package")
+Exception: Failed to setup static residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 701, in <module>
+    result = test_static_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 684, in test_static_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 710, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Running Static Residential Package Purchase test with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Static_Residential_Backend_Frontend_run_20250630_102349 ===
+
+=== Starting Static Residential Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up static residential proxy package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-25: character maps to <undefined>
+Package setup failed: Failed to select static package
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 66.68 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 656, in test_unlimited_residential_package_purchase
+    raise Exception("Failed to setup unlimited residential package")
+Exception: Failed to setup unlimited residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 700, in <module>
+    result = test_unlimited_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 683, in test_unlimited_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 709, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Running Unlimited Residential Package Purchase test with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Unlimited_Residential_Proxies_Backend_Frontend_run_20250630_102437 ===
+
+=== Starting Unlimited Residential Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up unlimited residential proxies package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-28: character maps to <undefined>
+Attempting to select option using XPath from subscription type
+Failed XPath selection: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6609d6f65+76917]
+	GetHandleVerifier [0x0x7ff6609d6fc0+77008]
+	(No symbol) [0x0x7ff660789dea]
+	(No symbol) [0x0x7ff6607e0256]
+	(No symbol) [0x0x7ff6607e050c]
+	(No symbol) [0x0x7ff660833887]
+	(No symbol) [0x0x7ff6608084af]
+	(No symbol) [0x0x7ff66083065c]
+	(No symbol) [0x0x7ff660808243]
+	(No symbol) [0x0x7ff6607d1431]
+	(No symbol) [0x0x7ff6607d21c3]
+	GetHandleVerifier [0x0x7ff660cad29d+3051437]
+	GetHandleVerifier [0x0x7ff660ca78f3+3028483]
+	GetHandleVerifier [0x0x7ff660cc588d+3151261]
+	GetHandleVerifier [0x0x7ff6609f182e+185662]
+	GetHandleVerifier [0x0x7ff6609f96ef+218111]
+	GetHandleVerifier [0x0x7ff6609dfae4+112628]
+	GetHandleVerifier [0x0x7ff6609dfc99+113065]
+	GetHandleVerifier [0x0x7ff6609c6c68+10616]
+	BaseThreadInitThunk [0x0x7ffaeec7e8d7+23]
+	RtlUserThreadStart [0x0x7ffaefcfc34c+44]
+
+Package setup failed: Failed to select dynamic unlimited package
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Rotating_Datacenter_Backend_Fronded.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 45.09 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 651, in test_rotating_datacenter_package_purchase
+    raise Exception("Failed to setup rotating datacenter package")
+Exception: Failed to setup rotating datacenter package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 695, in <module>
+    result = test_rotating_datacenter_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 678, in test_rotating_datacenter_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 704, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Running Rotating Datacenter Package Purchase test with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Rotating_Datacenter_Backend_Fronded_run_20250630_102545 ===
+
+=== Starting Rotating Datacenter Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up rotating datacenter proxy package ===
+Clicked set meal button
+Waiting for overlay to disappear: //div[contains(@class, 'modal')]
+Clicked subscription type dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-29: character maps to <undefined>
+Package setup failed: Failed to select dynamic datacenter package
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Residential_Proxy_Backend+Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 20.62 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 635, in test_residential_package_purchase
+    raise Exception("Failed to setup residential package")
+Exception: Failed to setup residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 679, in <module>
+    result = test_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 662, in test_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 688, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Running Residential Package Purchase test with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Purchase_Residential_Proxy_Backend+Frontend_run_20250630_102632 ===
+
+=== Starting Residential Package Purchase Test ===
+
+=== Navigating to admin interface ===
+Navigating to admin interface with token...
+Page loaded successfully
+Current URL: https://test-admin-goproxy.xiaoxitech.com/?token=ob0cg072
+Successfully navigated to admin interface with token
+Navigating to user details page...
+Found page load indicator: //*[@id="app"]/div/div/section/div/div[2]/div[2]/button[2]
+
+=== Setting up residential proxy package ===
+Clicked set meal button
+Clicked subscription dropdown
+Failed to select dropdown option: 'charmap' codec can't encode characters in position 22-26: character maps to <undefined>
+Package setup failed: Failed to select subscription type
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Mobile_Proxies_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 85.27 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 746, in test_mobile_package_purchase
+    print("\u2713 Payment successful")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 771, in <module>
+    result = test_mobile_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 754, in test_mobile_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 780, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Attempting to select mobile package...
+Attempt 1 of 3
+Found element using JavaScript text search
+Successfully clicked the mobile package option
+Clicked auto subscription dropdown
+
+Attempting to select non-auto subscription option...
+Attempt 1 of 3
+Found element using JavaScript text search
+Successfully clicked the non-auto subscription option
+Clicked capacity dropdown
+Clicked Mobile-1G option
+
+Setting amount...
+Attempting to enter text '2' in amount
+Actual value in field: 2
+Successfully entered 2 in amount
+
+=== Confirming purchase ===
+Success message found!
+
+=== Starting payment flow ===
+Navigating to main website...
+Setting authentication cookies...
+Login successful!
+Navigating to billing page...
+Clicking on Transaction tab...
+Clicking payment button...
+Clicking payment again button...
+
+=== Completing PayPal payment ===
+Switching to PayPal window...
+Successfully redirected to PayPal sandbox: https://www.sandbox.paypal.com/checkoutnow?token=8X611490CD531341D
+Entering PayPal email...
+Clicking Next button...
+Waiting for password field...
+Found password field, entering password...
+Clicking Login button...
+Waiting for payment review page...
+Clicking Continue button...
+
+=== Verifying Payment Success ===
+Current URL: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?payType=PayPal&orderNo=1939511202325594112&originalOrderNo=HW20250630102735528&mealType=5&token=8X611490CD531341D&PayerID=DF6KEN93XQD8G
+PayPal payment success detected
+Success element found!
+
+=== TEST PASSED ===
+
+=== TEST FAILED ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Purchase_Datacenter_Package_Backend_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 104.86 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Datacenter_Package_Backend_Frontend.py", line 809, in <module>
+    print(captured_output)
+    ~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 2728-2730: character maps to <undefined>
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Target_proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 39.06 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Target_proxies_payment_Frontend_Backend.py", line 1082, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Target_proxies_payment_Frontend_Backend.py", line 1086, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Found buy button, attempting to hover...
+Buy button is now clickable
+Successfully navigated to payment page
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+
+--- Debug: Printing all payment methods ---
+Found 6 payment methods
+Payment method 1: Text='PayPal
+Powered by PayPal
+You will be redirected to PayPal checkout to complete your order. You can also pay by credit card without a PayPal account.
+By clicking "Payment", you agree to our Terms of Service and Privacy Policy', HTML length=1219
+Payment method 2: Text='Cryptocurrency
+Powered by Cryptomus', HTML length=1904
+Payment method 3: Text='Credit Card
+Powered by Airwallex', HTML length=1767
+Payment method 4: Text='Cryptocurrency
+Powered by Epay', HTML length=1235
+Payment method 5: Text='Google Pay
+Powered by Airwallex', HTML length=1254
+Payment method 6: Text='Cryptocurrency
+Powered by Triple-A', HTML length=1635
+Trying selector: //div[contains(@class, 'pay-info')]//div[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Trying selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Found wallet option with selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button data-v-5fb31120="" type="button" class="el-button apply-btn el-button--primary"><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button data-v-5fb31120="" type="button" class="el-button buy-btn el-button--primary"><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-2d9baa6c="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-36520672="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103039897&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Static_Residential_Proxies_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 61.85 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Static_Residential_Proxies_payment_Frontend_Backend.py", line 1018, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Static_Residential_Proxies_payment_Frontend_Backend.py", line 1022, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Found buy button, attempting to hover...
+Buy button is now clickable
+Successfully navigated to payment page
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+
+--- Debug: Printing all payment methods ---
+Found 6 payment methods
+Payment method 1: Text='PayPal
+Powered by PayPal
+You will be redirected to PayPal checkout to complete your order. You can also pay by credit card without a PayPal account.
+By clicking "Payment", you agree to our Terms of Service and Privacy Policy', HTML length=1219
+Payment method 2: Text='Cryptocurrency
+Powered by Cryptomus', HTML length=1904
+Payment method 3: Text='Credit Card
+Powered by Airwallex', HTML length=1767
+Payment method 4: Text='Cryptocurrency
+Powered by Epay', HTML length=1235
+Payment method 5: Text='Google Pay
+Powered by Airwallex', HTML length=1254
+Payment method 6: Text='Cryptocurrency
+Powered by Triple-A', HTML length=1635
+Trying selector: //div[contains(@class, 'pay-info')]//div[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Trying selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Found wallet option with selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button data-v-5fb31120="" type="button" class="el-button apply-btn el-button--primary"><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button data-v-5fb31120="" type="button" class="el-button buy-btn el-button--primary"><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-2d9baa6c="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-36520672="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103143366&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Datacenter_Proxies_static_payment_Frontend_Backend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 55.26 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_static_payment_Frontend_Backend.py", line 1039, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_static_payment_Frontend_Backend.py", line 1043, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Found buy button, attempting to hover...
+Buy button is now clickable
+Successfully navigated to payment page
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+
+--- Debug: Printing all payment methods ---
+Found 6 payment methods
+Payment method 1: Text='PayPal
+Powered by PayPal
+You will be redirected to PayPal checkout to complete your order. You can also pay by credit card without a PayPal account.
+By clicking "Payment", you agree to our Terms of Service and Privacy Policy', HTML length=1219
+Payment method 2: Text='Cryptocurrency
+Powered by Cryptomus', HTML length=1904
+Payment method 3: Text='Credit Card
+Powered by Airwallex', HTML length=1767
+Payment method 4: Text='Cryptocurrency
+Powered by Epay', HTML length=1235
+Payment method 5: Text='Google Pay
+Powered by Airwallex', HTML length=1254
+Payment method 6: Text='Cryptocurrency
+Powered by Triple-A', HTML length=1635
+Trying selector: //div[contains(@class, 'pay-info')]//div[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Trying selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Found wallet option with selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button data-v-5fb31120="" type="button" class="el-button apply-btn el-button--primary"><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button data-v-5fb31120="" type="button" class="el-button buy-btn el-button--primary"><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-2d9baa6c="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-36520672="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103240913&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Unlimited_Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 20.65 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Starting dynamic residence payment test run ===
+
+=== Running all rotating datacenter proxies payment tests with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250630_103251 ===
+
+============================================================
+TEST 1: WALLET PAYMENT WITH BALANCE
+============================================================
+
+=== Starting wallet payment with balance test ===
+
+=== Starting authentication with cookies ===
+Page loaded successfully
+Added authentication cookies for with_balance account
+Waiting for page to load completely...
+Page loaded successfully
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+Trying selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Found wallet option with selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button type="button" class="el-button apply-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button type="button" class="el-button buy-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-2d9baa6c=""><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-36520672=""><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103303656&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Mobile_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 20.33 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Starting dynamic residence payment test run ===
+
+=== Running all rotating datacenter proxies payment tests with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250630_103314 ===
+
+============================================================
+TEST 1: WALLET PAYMENT WITH BALANCE
+============================================================
+
+=== Starting wallet payment with balance test ===
+
+=== Starting authentication with cookies ===
+Page loaded successfully
+Added authentication cookies for with_balance account
+Waiting for page to load completely...
+Page loaded successfully
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+Trying selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Found wallet option with selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button type="button" class="el-button apply-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button type="button" class="el-button buy-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-2d9baa6c=""><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-36520672=""><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103325738&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Datacenter_Proxies_Rotating_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 19.64 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Starting dynamic residence payment test run ===
+
+=== Running all rotating datacenter proxies payment tests with report directory: c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\reports\Payment_test_run_20250630_103336 ===
+
+============================================================
+TEST 1: WALLET PAYMENT WITH BALANCE
+============================================================
+
+=== Starting wallet payment with balance test ===
+
+=== Starting authentication with cookies ===
+Page loaded successfully
+Added authentication cookies for with_balance account
+Waiting for page to load completely...
+Page loaded successfully
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+Trying selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Found wallet option with selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button type="button" class="el-button apply-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button type="button" class="el-button buy-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-2d9baa6c=""><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-36520672=""><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103347543&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: Residential_Proxies_payment_Frontend.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 21.57 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 692, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 754, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 695, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output:
+
+=== Starting dynamic residence payment test run ===
+
+============================================================
+TEST 1: WALLET PAYMENT WITH BALANCE
+============================================================
+
+=== Starting wallet payment with balance test ===
+
+=== Starting authentication with cookies ===
+Page loaded successfully
+Added authentication cookies for with_balance account
+Page loaded successfully
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+Trying selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Found wallet option with selector: div[data-v-7d4d3948].pay-title.wallet-pay-title
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button type="button" class="el-button apply-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button type="button" class="el-button buy-btn el-button--primary" data-v-5fb31120=""><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-2d9baa6c=""><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--default blue submit-btn" style="border-radius:8px;" data-v-2095b955="" data-v-36520672=""><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103411304&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+--------------------------------------------------------------------------------
+✗ TEST: 000test.py
+--------------------------------------------------------------------------------
+Status: FAILED
+Duration: 61.22 seconds
+Return Code: 1
+
+Error Output:
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\000test.py", line 1018, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\000test.py", line 1022, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+
+Test Output (last 50 lines):
+Found buy button, attempting to hover...
+Buy button is now clickable
+Successfully navigated to payment page
+
+--- Step 1: Selecting Wallet Payment Method ---
+Waiting for payment methods to be visible...
+
+--- Debug: Printing all payment methods ---
+Found 6 payment methods
+Payment method 1: Text='PayPal
+Powered by PayPal
+You will be redirected to PayPal checkout to complete your order. You can also pay by credit card without a PayPal account.
+By clicking "Payment", you agree to our Terms of Service and Privacy Policy', HTML length=1219
+Payment method 2: Text='Cryptocurrency
+Powered by Cryptomus', HTML length=1904
+Payment method 3: Text='Credit Card
+Powered by Airwallex', HTML length=1767
+Payment method 4: Text='Cryptocurrency
+Powered by Epay', HTML length=1235
+Payment method 5: Text='Google Pay
+Powered by Airwallex', HTML length=1254
+Payment method 6: Text='Cryptocurrency
+Powered by Triple-A', HTML length=1635
+Trying selector: //div[contains(@class, 'pay-info')]//div[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Trying selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Found wallet option with selector: //div[contains(@class, 'pay-info')]//span[contains(text(), 'Wallet')]/ancestor::div[contains(@class, 'pay-info')]
+Scrolling wallet option into view...
+Wallet option is clickable
+Attempting to click using JavaScript
+Clicked wallet option using JavaScript
+
+--- Debug: Printing all visible buttons after wallet selection ---
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: Confirm, HTML: <button data-v-5fb31120="" type="button" class="el-button apply-btn el-button--primary"><!----><!----><span>Confirm</span></button>
+Button text: Payment, HTML: <button data-v-5fb31120="" type="button" class="el-button buy-btn el-button--primary"><!----><!----><span>Payment</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-2d9baa6c="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Okay, got it</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button data-v-2095b955="" data-v-36520672="" type="button" class="el-button el-button--default blue submit-btn" style="border-radius: 8px;"><!----><!----><span>Get 10% off</span></button>
+Button text: , HTML: <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
+Button text: , HTML: <button type="button" class="el-button el-button--primary" data-v-19e55cc6=""><!----><!----><span>Start Free Trial &gt;</span></button>
+
+--- Step 2: Clicking Payment Button ---
+
+--- Step 3: Verifying Payment Success Redirect ---
+Successfully redirected to: https://test-goproxy.xiaoxitech.com/dashboard/payment-success?orderNo=HW20250630103514269&payType=balance
+
+=== Cleaning up and closing browser ===
+
+
+
+================================================================================
+END OF REPORT
+================================================================================

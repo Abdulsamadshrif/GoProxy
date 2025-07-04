@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Execution Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background-color: #f0f0f0; padding: 20px; border-radius: 5px; }
+        .summary { background-color: #e8f5e8; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .test-case { border: 1px solid #ddd; margin: 10px 0; border-radius: 5px; }
+        .test-case-header { background-color: #f9f9f9; padding: 10px; border-bottom: 1px solid #ddd; }
+        .test-step { margin: 5px 10px; padding: 5px; border-left: 3px solid #ddd; }
+        .passed { border-left-color: #4CAF50; }
+        .failed { border-left-color: #f44336; }
+        .running { border-left-color: #2196F3; }
+        .not-started { border-left-color: #9E9E9E; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Test Execution Report</h1>
+        <p>Generated on: 2025-06-30 10:35:23</p>
+    </div>
+
+    <div class="summary">
+        <h2>Summary</h2>
+        <p><strong>Total Tests:</strong> 15</p>
+        <p><strong>Passed:</strong> 0</p>
+        <p><strong>Failed:</strong> 15</p>
+        <p><strong>Total Steps:</strong> 15</p>
+        <p><strong>Passed Steps:</strong> 0</p>
+        <p><strong>Failed Steps:</strong> 15</p>
+        <p><strong>Duration:</strong> 833.35 seconds</p>
+    </div>
+
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Target_Proxies_Backend_Frondend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Target_Proxies_Backend_Frondend.py</p>
+            <p><strong>Duration:</strong> 136.12 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Target_Proxies_Backend_Frondend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 136.12 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 679, in test_target_proxies_package_purchase
+    raise Exception("Failed to setup target proxies package")
+Exception: Failed to setup target proxies package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 723, in <module>
+    result = test_target_proxies_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 706, in test_target_proxies_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Target_Proxies_Backend_Frondend.py", line 732, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Static_Residential_Backend+Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Static_Residential_Backend+Frontend.py</p>
+            <p><strong>Duration:</strong> 45.07 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Static_Residential_Backend+Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 45.07 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 657, in test_static_residential_package_purchase
+    raise Exception("Failed to setup static residential package")
+Exception: Failed to setup static residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 701, in <module>
+    result = test_static_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 684, in test_static_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Static_Residential_Backend+Frontend.py", line 710, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py</p>
+            <p><strong>Duration:</strong> 66.68 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 66.68 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 656, in test_unlimited_residential_package_purchase
+    raise Exception("Failed to setup unlimited residential package")
+Exception: Failed to setup unlimited residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 700, in <module>
+    result = test_unlimited_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 683, in test_unlimited_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Unlimited_Residential_Proxies_Backend_Frontend.py", line 709, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Rotating_Datacenter_Backend_Fronded.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Rotating_Datacenter_Backend_Fronded.py</p>
+            <p><strong>Duration:</strong> 45.09 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Rotating_Datacenter_Backend_Fronded.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 45.09 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 651, in test_rotating_datacenter_package_purchase
+    raise Exception("Failed to setup rotating datacenter package")
+Exception: Failed to setup rotating datacenter package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 695, in <module>
+    result = test_rotating_datacenter_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 678, in test_rotating_datacenter_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Rotating_Datacenter_Backend_Fronded.py", line 704, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Residential_Proxy_Backend+Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Residential_Proxy_Backend+Frontend.py</p>
+            <p><strong>Duration:</strong> 20.62 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Residential_Proxy_Backend+Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 20.62 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 635, in test_residential_package_purchase
+    raise Exception("Failed to setup residential package")
+Exception: Failed to setup residential package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 679, in <module>
+    result = test_residential_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 662, in test_residential_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Residential_Proxy_Backend+Frontend.py", line 688, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Mobile_Proxies_Backend_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Mobile_Proxies_Backend_Frontend.py</p>
+            <p><strong>Duration:</strong> 85.27 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Mobile_Proxies_Backend_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 85.27 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 746, in test_mobile_package_purchase
+    print("\u2713 Payment successful")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 771, in <module>
+    result = test_mobile_package_purchase(driver, report_dir, test_case)
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 754, in test_mobile_package_purchase
+    print(f"\u2717 Test failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Mobile_Proxies_Backend_Frontend.py", line 780, in <module>
+    print(f"\u2717 Test failed with exception: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Purchase_Datacenter_Package_Backend_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Purchase_Datacenter_Package_Backend_Frontend.py</p>
+            <p><strong>Duration:</strong> 104.86 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Purchase_Datacenter_Package_Backend_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 104.86 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Purchase_Datacenter_Package_Backend_Frontend.py", line 809, in <module>
+    print(captured_output)
+    ~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 2728-2730: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Target_proxies_payment_Frontend_Backend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Target_proxies_payment_Frontend_Backend.py</p>
+            <p><strong>Duration:</strong> 39.06 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Target_proxies_payment_Frontend_Backend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 39.06 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Target_proxies_payment_Frontend_Backend.py", line 1082, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Target_proxies_payment_Frontend_Backend.py", line 1086, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Static_Residential_Proxies_payment_Frontend_Backend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Static_Residential_Proxies_payment_Frontend_Backend.py</p>
+            <p><strong>Duration:</strong> 61.85 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Static_Residential_Proxies_payment_Frontend_Backend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 61.85 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Static_Residential_Proxies_payment_Frontend_Backend.py", line 1018, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Static_Residential_Proxies_payment_Frontend_Backend.py", line 1022, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Datacenter_Proxies_static_payment_Frontend_Backend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Datacenter_Proxies_static_payment_Frontend_Backend.py</p>
+            <p><strong>Duration:</strong> 55.26 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Datacenter_Proxies_static_payment_Frontend_Backend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 55.26 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_static_payment_Frontend_Backend.py", line 1039, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_static_payment_Frontend_Backend.py", line 1043, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Unlimited_Residential_Proxies_payment_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Unlimited_Residential_Proxies_payment_Frontend.py</p>
+            <p><strong>Duration:</strong> 20.65 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Unlimited_Residential_Proxies_payment_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 20.65 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Unlimited_Residential_Proxies_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Mobile_Proxies_payment_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Mobile_Proxies_payment_Frontend.py</p>
+            <p><strong>Duration:</strong> 20.33 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Mobile_Proxies_payment_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 20.33 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Mobile_Proxies_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Datacenter_Proxies_Rotating_payment_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Datacenter_Proxies_Rotating_payment_Frontend.py</p>
+            <p><strong>Duration:</strong> 19.64 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Datacenter_Proxies_Rotating_payment_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 19.64 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 743, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 825, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Datacenter_Proxies_Rotating_payment_Frontend.py", line 747, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>Residential_Proxies_payment_Frontend.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of Residential_Proxies_payment_Frontend.py</p>
+            <p><strong>Duration:</strong> 21.57 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run Residential_Proxies_payment_Frontend.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 21.57 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 692, in main
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 754, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\Residential_Proxies_payment_Frontend.py", line 695, in main
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+    <div class="test-case">
+        <div class="test-case-header">
+            <h3>000test.py</h3>
+            <p><strong>Status:</strong> FAILED</p>
+            <p><strong>Description:</strong> Execution of 000test.py</p>
+            <p><strong>Duration:</strong> 61.22 seconds</p>
+        </div>
+
+        <div class="test-step failed">
+            <p><strong>Execute Test</strong> - Run 000test.py</p>
+            <p>Status: FAILED</p>
+            <p>Duration: 61.22 seconds</p>
+<p>Error: Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\000test.py", line 1018, in <module>
+    print(f"\u2713 Test 1 completed: {test_results['wallet_payment_with_balance']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ahmad\Documents\Automation_selenium\Local\GoProxy\GoProxy\000test.py", line 1022, in <module>
+    print(f"\u2717 Test 1 failed with error: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ahmad\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+</p></div></div>
+</body>
+</html>
